@@ -1,0 +1,16 @@
+ [ moleculetype ]
+ ; molname	nrexcl
+    siqua        2
+    
+ [ atoms ]
+ ; id	at resnr  residu name at name cg nr charge
+ 1    Siq  1  SIQUA   Siq    1   1.1         28.09
+
+ [ moleculetype ]
+ ; molname nrexcl
+    osqua        2
+
+[ atoms ]
+ ; id at type res nr  residu name at name cg nr charge
+ 1   Oq   1    OSQUA    Oq     1     -0.55       15.9994
+ 

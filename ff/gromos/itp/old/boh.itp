@@ -1,0 +1,82 @@
+[ moleculetype ]
+; name          nrexcl
+BOH      3 
+
+ [ atoms ]
+;  nr    type  resnr   residue    atom    chnr     charge                         
+    1     H     1       BOHOH      H4       1      0.46
+    2     O     1       BOHOH      O2       2     -0.64
+    3     C     1       BOHRI      C4       3      0.30
+    4     C     1       BOHRI      C5       4     -0.25
+    5     H     1       BOHRI      H5       5      0.14
+    6     C     1       BOHRI      C3       6      0.30
+    7     O     1       BOHOH      O1       7     -0.64
+    8     H     1       BOHOH      H3       8      0.46
+    9     C     1       BOHRI      C2       9     -0.25
+   10     H     1       BOHRI      H2      10      0.14
+   11     C     1       BOHRI      C1      11     -0.11
+   12     H     1       BOHRI      H1      12      0.10
+   13     C     1       BOHRI      C6      13     -0.11
+   14     H     1       BOHRI      H6      14      0.10
+
+ [ bonds ]     
+;    i    j   func
+    1    2   2
+    2    3   2
+    3    4   2
+    3    6   2
+    4    5   2
+    4   13   2
+    6    7   2
+    6    9   2
+    7    8   2
+    9   10   2
+    9   11   2
+   11   12   2
+   11   13   2
+   13   14   2
+
+ [ angles ]    
+ ;   i    j    k   func
+    1    2    3   2 	
+    2    3    4   2 	
+    2    3    6   2 	
+    4    3    6   2 	
+    3    4    5   2 	
+    3    4   13   2 	
+    5    4   13   2 	
+    3    6    7   2 	
+    3    6    9   2 	
+    7    6    9   2 	
+    6    7    8   2 	
+    6    9   10   2 	
+    6    9   11   2 	
+   10    9   11   2 	
+    9   11   12   2 	
+    9   11   13   2 	
+   12   11   13   2 	
+    4   13   11   2 	
+    4   13   14   2 	
+   11   13   14   2 	
+
+ [ dihedrals ]    
+  ;  i    j    k    l   func
+     3    4   13    11    2
+     4   13   11     9    2
+    13   11    9     6    2
+    11    9    6     3    2
+     9    6    3     4    2
+     6    3    4    13    2
+     5    4   13    14    2
+    14   13   11    12    2
+    12   11    9    10    2
+    10    9    6     7    2
+     7    6    3     2    1
+     2    3    4     5    2
+	 
+	 
+[ pairs ]
+; ai aj funct
+2   7     1
+
+  

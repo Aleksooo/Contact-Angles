@@ -1,0 +1,36 @@
+integrator          =  md
+tinit               =  0
+dt                  =  0.002
+nsteps              =  TIME
+
+comm_mode           =  linear
+nstcomm             =  100
+nstxout             =  0
+nstvout             =  0
+nstxtcout           =  5000
+nstlist             =  10
+ns_type             =  grid
+
+rlist               =  1.4
+rcoulomb            =  1.4 
+rvdw                =  1.4 
+
+coulombtype         =  pme
+fourierspacing      =  0.12
+pme-order           =  4
+ewald-rtol          =  1e-5
+cutoff-scheme       =  verlet
+
+gen_vel             =  yes
+gen_temp            =  298
+
+tcoupl              =  v-rescale 
+tc_grps             =  system
+tau_t               =  3
+ref_t               =  298
+
+constraints          = all-bonds
+constraint_algorithm = lincs 
+continuation         = no
+
+electric-field-z    = FIELD 0 0 0

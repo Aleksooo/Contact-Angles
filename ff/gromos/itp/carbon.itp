@@ -1,0 +1,47 @@
+ [ moleculetype ]
+ ; molname	nrexcl
+GR              2
+ [ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+   1       GR      1       GR         C        1          0.          12.
+
+ 
+ [ moleculetype ]
+ ; molname	nrexcl
+GR1               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+ 1       GR1       1       GR1          C1        1         0.265       12.
+ 
+
+ [ moleculetype ]
+ ; molname	nrexcl
+GR2               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+ 1       GR2       1       GR2          C2        1          0.      13.
+
+
+[ moleculetype ]
+ ; molname	nrexcl
+GRO               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+1       OG        1       GRO      O     1          -0.683       15.9994
+
+
+[ moleculetype ]
+ ; molname	nrexcl
+GRH               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+1      HG        1       GRH       H    1        0.418        1.008
+

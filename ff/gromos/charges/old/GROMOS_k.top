@@ -1,0 +1,204 @@
+[ defaults ]
+; nbfunc	comb-rule	gen-pairs	fudgeLJ	fudgeQQ	N
+       1              1     no                1.0           1.0
+
+[ atomtypes ]
+; name  at.num     mass     charge  ptype       C6             C12
+   CR1       6   13.019       0.00      A     5.513062e-03   1.511654e-05
+    NR       7   14.0067      0.00      A     2.436410e-03   2.319529e-06
+   CH1       6   13.019       0.00      A     0.00606841     9.70225e-05 
+  CCH1       6   13.019       0.00      A     0.00606841     9.70225e-05 
+   CH2       6   14.027       0.00      A     0.0074684164   3.3965584e-05    
+   CH3       6   15.035       0.00      A     0.0096138025   2.6646244e-05
+    CH       6   13.019       0.00      A     0.00607       9.7e-05
+     C       6   12.011       0.00      A     0.0023406244   4.937284e-06
+    OA       8   15.9994      0.00      A     0.0022619536   7.4149321e-07
+     O       8   15.9994      0.00      A     0.0022619536   1.0e-06  
+    OM       8   15.9994      0.00      A     0.0022619536   1.0e-06         
+     S      16   32.066       0.00      A     0.0099840064   1.3075456e-05  
+   NA       11   22.990       0.00      A     7.2063121e-05  2.1025e-08
+   OW        8   15.9994      0.00      A     0.0026173456  2.634129e-06 
+    H        1   1.008        0.00      A     0.0           0.0 
+   CC1       6   13.019       0.00      A     0.00606841     9.70225e-05 
+   CC2       6   14.027       0.00      A     0.0074684164   3.3965584e-05 
+   CA       20   40.08        0.00      A     0.00100489     4.980125e-07
+   CL       17   35.453       0.00      A     0.0128097124   6.0466176E-05
+   
+[ pairtypes ]
+; i    j func          c6           c12
+ OA   OA  1    0.0022619536  7.4149321e-07
+ O     O  1    0.0022619536  7.4149321e-07
+
+
+[ bondtypes ]
+;    i       j   func         b0       kb
+   CH3     CH2      2     0.1530     7.15e+06
+   CH3     CH1      2     0.1530     7.15e+06
+   CR1     CR1      2     0.139     10.8E+06
+   CR1      NR      2     0.134     11.7E+06
+    C      CR1      2     0.139     10.8E+06
+    C       NR      2     0.134     11.7E+06
+   CH2     CH2      2     0.1530     7.15e+06
+   CH2     CH1      2     0.1530     7.15e+06
+   CH2    CCH1      2     0.1530     7.15e+06   
+   CH2       C      2     0.1530     7.15e+06
+   CH1       C      2     0.1530     7.15e+06
+   CH        C      2     0.1530     7.15e+06
+   CH2      OA      2     0.1430     8.18e+06
+   CH1      OA      2     0.1430     8.18e+06
+     C      OA      2     0.1250     1.34e+07 
+     C       O      2     0.1230     1.66e+07 
+    OM       S      2     0.1500     8.37e+06
+   CH1       S      2     0.1830     5.62e+06 ; CH2-S
+     C     CH3      2     0.153      7.15e+06
+   CH2      CH      2     0.153      7.15e+06
+    CH     CH3      2     0.153      7.15e+06
+   CH1     CH1      2     0.133     11.80e+06 ; 5-ring
+  CCH1    CCH1      2     0.133     11.80e+06 ; 5-ring, double bond length equal   
+   CC2     CC1      2     0.1530     5.43e+06 ; sugar
+   CC2     CC2      2     0.1530     5.43e+06 ; sugar
+   CC1     CC1      2     0.1530     5.43e+06 ; sugar    
+   CC1      OA      2     0.1435     6.10e+06 ; sugar
+   CC2      OA      2     0.1435     6.10e+06 ; sugar   
+   CC1     CH1      2     0.1530     5.43e+06 ; sugar
+     H      OA      2     0.100     15.70e+06   
+     H      O       2     0.100     15.70e+06  
+     C      C       2     0.139     10.8E+06
+     C      H       2     0.109     12.3E+06
+    NR      H       2     0.100     18.7E+06
+[ angletypes ]
+;    i       j       k   func      th0      cth
+   CR1       C     CR1      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+     C     CR1       C      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+     C       C      OA      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+  ;CR1       C      OA      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+   CR1       C      OM      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+     C       C       O      2    121.0    730.0  ; O-C-CHn
+     C       C      OM      2    117.0    635.0  ; CHn-C-OM
+   CR1       C       C      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+     C       C     CR1      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+     C       C       C      2    120.0    560.0  ; N, C, CR1 (6-ring, no H)
+     O       C      OM      2    124.0    730.0  ; O-C-OA
+     C      OM     CH2      2    120.0    530.0  ; SI-OA-CHn
+    OM     CH2     CH3      2    109.5    520.0  ; CHn-CHn-OM
+    CR1      C       S      2    120.0    560.0   
+     C       S      OM      2    109.6    450.0
+   CR1     CR1     CR1      2    120.0    560.0
+   CR1     CR1       C      2    120.0    560.0
+   CR1       C      NR      2    120.0    560.0
+     C       C      NR      2    120.0    560.0
+     C       NR      C      2    120.0    560.0
+   CR1     CR1      NR      2    120.0    560.0
+   CR1      NR       C      2    120.0    560.0
+   CR1      NR      CR1      2    120.0    560.0
+   CR1       C      OA      2    115.0    610.0  ; CHn, C-C-OA, N, NT, NL 
+    NR       C      OA      2    124.0    730.0  ;  O-C-OA, N, NT, NL C-NE-CH2
+    NR       C      O      2    124.0    730.0  ;  O-C-OA, N, NT, NL C-NE-CH2
+     C      OA       H      2    109.5    450.0  ;  X-OA, SI-X
+   CH3     CH2     CH2      2    111.0    530.0
+   CH2     CH2     CH2      2    111.0    530.0
+   CH2     CH2     CH1      2    111.0    530.0
+   CH2     CH2    CCH1      2    111.0    530.0
+   CH2     CH1     CH2      2    111.0    530.0
+   CH3     CH1     CH3      2    111.0    530.0
+   CH3     CH2     CH1      2    111.0    530.0
+   CH2     CH1       C      2    111.0    530.0
+   CH3     CH1       C      2    111.0    530.0
+   CH3     C       CH1      2    111.0    530.0
+   CC1     CH1      OA      2    111.0    530.0 
+   CC1     CH1     CH2      2    111.0    530.0  
+   CC1     CH1     CH1      2    111.0    530.0     
+   CH1     CH2       C      2    111.0    530.0
+   CH1     CH2      OA      2    111.0    530.0  ; CHn-CHn-C, CHn, OA, NR, NT, NL
+   CH2     CH2      OA      2    111.0    530.0
+   CH2     CH1      OA      2    111.0    530.0 
+   CH1     CC1      OA      2    111.0    530.0    
+   CH1       C      OA      2    115.0    610.0 
+   CH2       C      OA      2    115.0    610.0  ; CHn, C-C-OA, N, NT, NL 
+     O       C      OA      2    124.0    730.0  ; O-C-OA, N, NT, NL
+     O       C     CH2      2    121.0    685.0  
+     O       C     CH1      2    121.0    685.0  ; O-C-CHn, C
+   CH2      OA       C      2    109.5    380.0  ; CHn-OA-CHn
+   CH1      OA       H      2    109.5    380.0  ; CHn-OA-CHn
+   CH2      OA       H      2    109.5    380.0 
+   CC1      OA     CH2      2    109.5    380.0
+   CH2      OA     CH2      2    109.5    380.0
+   CH2      OA     CH1      2    109.5    380.0
+     C     CH1       S      2    113.0    545.0
+   CH2     CH1       S      2    113.0    545.0  ; CH2-CH1-S 
+   CH1       S      OM      2    109.6    450.0  ; OM-P-OA
+    OM       S      OM      2    120.0    780.0  ; OM-P-OM  
+   CH3       C     CH3      2    111.0    530.0
+   CH3       C     CH2      2    111.0    530.0
+     C     CH2      CH      2    111.0    530.0
+     C     CH2     CH2      2    111.0    530.0
+   CH2      CH     CH3      2    111.0    530.0
+   CH3      CH     CH3      2    111.0    530.0
+   CH2     CH1      OA      2    111.0    530.0
+   CH1     CH1      OA      2    111.0    530.0 
+   CH1     CH1     CH1      2    111.0    530.0
+  CCH1    CCH1     CH2      2    120.0    505.0 ; H-N-CH3, H, HC-6-ring, H-NT-CHn
+   CH1     CH1     CH2      2    111.0    530.0
+   CC1     CC1     CC1      2    108.0    465.0 ; 5-ring  
+   CC1     CC2     CC1      2    108.0    465.0 ; 5-ring  
+   CC2     CC1     CC1      2    108.0    465.0 ; 5-ring
+   CC2      OA     CC1      2    108.0    465.0 ; 5-ring   
+   CC1     CC2      OA      2    108.0    465.0 ; 5-ring 
+   CC1     CC1      OA      2    108.0    465.0 ; 5-ring
+   CC2     CC1      OA      2    108.0    465.0 ; 5-ring 
+   CC1     CC1     CH1      2    108.0    465.0 ; 5-ring    
+   CC1      OA       H      2    109.5    380.0 ; H-NL sugar
+   C         C       C      2    120.0    560.0
+   C         C       H      2    120.0    560.0
+  NR         C       H      2    120.0    560.0
+   C         O       H      2    109.5    450.0
+   H        NR       C      2    120.0    560.0
+[ dihedraltypes ]
+;   i     j     k     l    func      phi0      cp   mult
+CR1      C     OA    H        1   180.000    7.11      2 ; at ring 
+   C      C     O    H        1   180.000    7.11      2 ; at ring 
+ NR      C     OA    H        1   180.000    7.11      2 ; at ring 
+        CH2   CH1             1     0.000    5.92      3 
+        CH1   CH1             1     0.000    5.92      3 
+        CH2  CCH1             1     0.000    5.92      3 		
+        CH1    OA             1     0.000    1.26      3 ; -CHn-OA- (no sugar)     
+        CH2   CH2             1     0.000    5.92      3 ; -CHn-CHn-
+          C   CH2             1     0.000    0.418     2 ; O-CH1-CHn-no O
+          C   CH1             1     0.000    0.418     2 ; O-CH1-CHn-no O
+        CH2    OA             1     0.000    1.26      3 ; -CHn-OA- (no sugar)
+          C    OA             1   180.000   16.70      2 ;   -C-OA- (carboxyl)
+        CH1     S             1     0.000    2.93      3 ; -CH2-S-
+        CH2    CH             1     0.000    5.92      3
+        CH3    CH             1     0.000    5.92      3
+          C   CH3             1     0.000    5.92      3
+  CH3     C   CH2    CH       1     0.000    5.92      3
+        CC1   CC1             1   180.000    2.67      1 ; sugar
+   OA   CC1   CC1    OA       1   180.000    9.35      1 ; sugar
+        CC2   CC1             1   180.000    2.67      1 ; sugar
+   CC1  CC2    OA   CC1       1   180.000    7.11      2 ; at ring       
+        CC1    OA             1   180.000    7.11      2 ; at ring       
+   CC1  CC1    OA   CC2       1   180.000    7.11      2 ; at ring       
+        CC1   CH1             1   180.000    2.67      1 ; at ring 	
+C       C     C     C         1     0.000    5.44      3
+C       C     C     H         1     0.000    5.44      3
+C       C     C     H         2     0.000  167.4
+C       C     C     C         2     0.000  167.4 
+H       C     C     H         2     0.000  167.4 
+   CH2 CCH1  CCH1   CH2       2     0.000  167.4        ; improper planar group	
+        CR1   CR1             2     0.000  167.4        ; improper planar group	
+        CR1     C             2     0.000  167.4        ; improper planar group	
+        CR1    NR             2     0.000  167.4        ; improper planar group	
+        C      NR             2     0.000  167.4        ; improper planar group	
+O       C     C     H         2     0.000  167.4
+C       C     C     O         1   180.000    7.11      2
+C       C     O     H         2     0.000  167.4      
+C       C     C     C         2     0.000  167.4 
+C      NR     C     C         2     0.000  167.4
+H       C     C     H         2     0.000  167.4 
+O       C     C     O         1   180.000    9.35     1 
+O       C     C     O         2     0.000  167.4      
+O       C    NR     H         2     0.000  167.4
+H       C    NR     H         2     0.000  167.4
+    
+#include "system.itp"          
+            

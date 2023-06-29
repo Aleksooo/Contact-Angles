@@ -1,0 +1,8 @@
+#include "pentane.itp"
+
+[ system ]
+p_300
+
+[ molecules ]
+; molecule name         nr.
+PENTANE 300

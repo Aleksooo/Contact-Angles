@@ -1,0 +1,667 @@
+[ moleculetype ]
+;
+  c11e5c 3 
+
+; Force constant parameters
+#define dfTPP_bon_O2_C_3_41       1    0.125  5.49e+05 ;1
+#define dfTPP_bon_C_3_CT_21       1    0.152  2.65e+05 ;1
+#define dfTPP_bon_HC_CT_191       1    0.109  2.85e+05 ;1
+#define dfTPP_bon_OS_CT_213       1    0.141  2.68e+05 ;1
+#define dfTPP_bon_CT_CT_187       1    0.153  2.24e+05 ;1
+#define dfTPP_ang_O2_C_3_O2_197   1  126.0    669.4    ;2
+#define dfTPP_ang_O2_C_3_CT_124   1  117.0    585.8    ;2
+#define dfTPP_ang_HC_CT_C_3_470   1  109.5    292.9    ;2
+#define dfTPP_ang_OS_CT_C_3_889   1  109.5    418.4    ;2
+#define dfTPP_ang_HC_CT_HC_555    1  107.8    276.1    ;2
+#define dfTPP_ang_OS_CT_HC_592    1  109.5    292.9    ;2
+#define dfTPP_ang_CT_OS_CT_757    1  109.5    502.1    ;2
+#define dfTPP_ang_OS_CT_CT_539    1  109.5    418.4    ;2
+#define dfTPP_ang_HC_CT_CT_507    1  110.7    313.8    ;2
+#define dfTPP_ang_CT_CT_CT_499    1  112.7    488.3    ;2
+#define dfTPP_dih_O2_C_3_CT_HC_533 3  +0.0  +0.0  +0.0  +0.0  +0.0  +0.0 ;3
+#define dfTPP_dih_OS_CT_C_3_O2_1771 3  +3.4  +0.0  -3.4  +0.0  +0.0  +0.0 ;3
+#define dfTPP_dih_C_3_CT_OS_CT_924 3  +1.7  +2.8  +1.0  -5.6  +0.0  +0.0 ;3
+#define dfTPP_dih_HC_CT_OS_CT_362 3  +1.6  +4.8  +0.0  -6.4  +0.0  +0.0 ;3
+#define dfTPP_dih_CT_CT_OS_CT_320 3  +1.7  +2.8  +1.0  -5.6  +0.0  +0.0 ;3
+#define dfTPP_dih_OS_CT_CT_HC_518 3  +1.0  +2.9  +0.0  -3.9  +0.0  +0.0 ;3
+#define dfTPP_dih_OS_CT_CT_OS_595 3  -1.2  +1.2  +0.0  +0.0  +0.0  +0.0 ;3
+#define dfTPP_dih_HC_CT_CT_HC_510 3  +0.6  +1.9  +0.0  -2.5  +0.0  +0.0 ;3
+#define dfTPP_dih_CT_OS_CT_CT_320 3  +1.7  +2.8  +1.0  -5.6  +0.0  +0.0 ;3
+#define dfTPP_dih_OS_CT_CT_CT_296 3  -2.8  -2.8  +0.0  +0.0  +0.0  +0.0 ;3
+#define dfTPP_dih_HC_CT_CT_CT_287 3  +0.6  +1.9  +0.0  -2.5  +0.0  +0.0 ;3
+#define dfTPP_dih_CT_CT_CT_CT_284 3  +2.9  -1.5  +0.2  -1.7  +0.0  +0.0 ;3
+
+[ atoms ]
+  1  opls_272   1  CE1H   O7     1  -0.825   15.999400 ; [ O2]  O: O in COO- carboxylate bound to ether carbon atom
+  2  opls_271   1  CE1H   C22    1  +0.650   12.011000 ; [C_3]  C in COO- carboxylate bound to ether carbon
+  3  opls_272   1  CE1H   O6     1  -0.825   15.999400 ; [ O2]  O: O in COO- carboxylate bound to ether carbon atom
+  4  opls_182   1  CE1H   C21    2  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+  5  opls_185   1  CE1H   H42    2  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+  6  opls_185   1  CE1H   H43    2  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+  7  opls_180   1  CE1H   O5     3  -0.400   15.999400 ; [ OS]  O: dialkyl ether
+  8  opls_182   1  CE1H   C20    4  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+  9  opls_185   1  CE1H   H40    4  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 10  opls_185   1  CE1H   H41    4  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 11  opls_182   1  CE1H   C19    5  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 12  opls_185   1  CE1H   H38    5  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 13  opls_185   1  CE1H   H39    5  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 14  opls_180   1  CE1H   O4     6  -0.400   15.999400 ; [ OS]  O: dialkyl ether
+ 15  opls_182   1  CE1H   C18    7  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 16  opls_185   1  CE1H   H36    7  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 17  opls_185   1  CE1H   H37    7  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 18  opls_182   1  CE1H   C17    8  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 19  opls_185   1  CE1H   H34    8  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 20  opls_185   1  CE1H   H35    8  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 21  opls_180   1  CE1H   O3     9  -0.400   15.999400 ; [ OS]  O: dialkyl ether
+ 22  opls_182   1  CE1H   C16   10  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 23  opls_185   1  CE1H   H32   10  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 24  opls_185   1  CE1H   H33   10  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 25  opls_182   1  CE1H   C15   11  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 26  opls_185   1  CE1H   H30   11  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 27  opls_185   1  CE1H   H31   11  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 28  opls_180   1  CE1H   O2    12  -0.400   15.999400 ; [ OS]  O: dialkyl ether
+ 29  opls_182   1  CE1H   C14   13  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 30  opls_185   1  CE1H   H28   13  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 31  opls_185   1  CE1H   H29   13  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 32  opls_182   1  CE1H   C13   14  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 33  opls_185   1  CE1H   H26   14  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 34  opls_185   1  CE1H   H27   14  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 35  opls_180   1  CE1H   O1    15  -0.400   15.999400 ; [ OS]  O: dialkyl ether
+ 36  opls_182   1  CE1H   C12   16  +0.140   12.011000 ; [ CT]  C(H2OR): ethyl  ether
+ 37  opls_185   1  CE1H   H24   16  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 38  opls_185   1  CE1H   H25   16  +0.030    1.008000 ; [ HC]  H(COR): alpha H ether
+ 39  opls_136   1  CE1H   C11   17  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 40  opls_140   1  CE1H   H22   17  +0.060    1.008000 ; [ HC]  alkane H.
+ 41  opls_140   1  CE1H   H23   17  +0.060    1.008000 ; [ HC]  alkane H.
+ 42  opls_136   1  CE1H   C10   18  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 43  opls_140   1  CE1H   H20   18  +0.060    1.008000 ; [ HC]  alkane H.
+ 44  opls_140   1  CE1H   H21   18  +0.060    1.008000 ; [ HC]  alkane H.
+ 45  opls_136   1  CE1H   C9    19  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 46  opls_140   1  CE1H   H18   19  +0.060    1.008000 ; [ HC]  alkane H.
+ 47  opls_140   1  CE1H   H19   19  +0.060    1.008000 ; [ HC]  alkane H.
+ 48  opls_136   1  CE1H   C8    20  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 49  opls_140   1  CE1H   H16   20  +0.060    1.008000 ; [ HC]  alkane H.
+ 50  opls_140   1  CE1H   H17   20  +0.060    1.008000 ; [ HC]  alkane H.
+ 51  opls_136   1  CE1H   C7    21  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 52  opls_140   1  CE1H   H14   21  +0.060    1.008000 ; [ HC]  alkane H.
+ 53  opls_140   1  CE1H   H15   21  +0.060    1.008000 ; [ HC]  alkane H.
+ 54  opls_136   1  CE1H   C6    22  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 55  opls_140   1  CE1H   H12   22  +0.060    1.008000 ; [ HC]  alkane H.
+ 56  opls_140   1  CE1H   H13   22  +0.060    1.008000 ; [ HC]  alkane H.
+ 57  opls_136   1  CE1H   C5    23  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 58  opls_140   1  CE1H   H10   23  +0.060    1.008000 ; [ HC]  alkane H.
+ 59  opls_140   1  CE1H   H11   23  +0.060    1.008000 ; [ HC]  alkane H.
+ 60  opls_136   1  CE1H   C4    24  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 61  opls_140   1  CE1H   H8    24  +0.060    1.008000 ; [ HC]  alkane H.
+ 62  opls_140   1  CE1H   H9    24  +0.060    1.008000 ; [ HC]  alkane H.
+ 63  opls_136   1  CE1H   C3    25  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 64  opls_140   1  CE1H   H6    25  +0.060    1.008000 ; [ HC]  alkane H.
+ 65  opls_140   1  CE1H   H7    25  +0.060    1.008000 ; [ HC]  alkane H.
+ 66  opls_136   1  CE1H   C2    26  -0.120   12.011000 ; [ CT]  alkane CH2 
+ 67  opls_140   1  CE1H   H4    26  +0.060    1.008000 ; [ HC]  alkane H.
+ 68  opls_140   1  CE1H   H5    26  +0.060    1.008000 ; [ HC]  alkane H.
+ 69  opls_135   1  CE1H   C1    27  -0.180   12.011000 ; [ CT]  alkane CH3 
+ 70  opls_140   1  CE1H   H1    27  +0.060    1.008000 ; [ HC]  alkane H.
+ 71  opls_140   1  CE1H   H2    27  +0.060    1.008000 ; [ HC]  alkane H.
+ 72  opls_140   1  CE1H   H3    27  +0.060    1.008000 ; [ HC]  alkane H.
+
+[ bonds ]
+  1   2  dfTPP_bon_O2_C_3_41
+  2   3  dfTPP_bon_O2_C_3_41
+  2   4  dfTPP_bon_C_3_CT_21
+  4   5  dfTPP_bon_HC_CT_191
+  4   6  dfTPP_bon_HC_CT_191
+  8   9  dfTPP_bon_HC_CT_191
+  8  10  dfTPP_bon_HC_CT_191
+ 11  12  dfTPP_bon_HC_CT_191
+ 11  13  dfTPP_bon_HC_CT_191
+ 15  16  dfTPP_bon_HC_CT_191
+ 15  17  dfTPP_bon_HC_CT_191
+ 18  19  dfTPP_bon_HC_CT_191
+ 18  20  dfTPP_bon_HC_CT_191
+ 22  23  dfTPP_bon_HC_CT_191
+ 22  24  dfTPP_bon_HC_CT_191
+ 25  26  dfTPP_bon_HC_CT_191
+ 25  27  dfTPP_bon_HC_CT_191
+ 29  30  dfTPP_bon_HC_CT_191
+ 29  31  dfTPP_bon_HC_CT_191
+ 32  33  dfTPP_bon_HC_CT_191
+ 32  34  dfTPP_bon_HC_CT_191
+ 36  37  dfTPP_bon_HC_CT_191
+ 36  38  dfTPP_bon_HC_CT_191
+ 39  40  dfTPP_bon_HC_CT_191
+ 39  41  dfTPP_bon_HC_CT_191
+ 42  43  dfTPP_bon_HC_CT_191
+ 42  44  dfTPP_bon_HC_CT_191
+ 45  46  dfTPP_bon_HC_CT_191
+ 45  47  dfTPP_bon_HC_CT_191
+ 48  49  dfTPP_bon_HC_CT_191
+ 48  50  dfTPP_bon_HC_CT_191
+ 51  52  dfTPP_bon_HC_CT_191
+ 51  53  dfTPP_bon_HC_CT_191
+ 54  55  dfTPP_bon_HC_CT_191
+ 54  56  dfTPP_bon_HC_CT_191
+ 57  58  dfTPP_bon_HC_CT_191
+ 57  59  dfTPP_bon_HC_CT_191
+ 60  61  dfTPP_bon_HC_CT_191
+ 60  62  dfTPP_bon_HC_CT_191
+ 63  64  dfTPP_bon_HC_CT_191
+ 63  65  dfTPP_bon_HC_CT_191
+ 66  67  dfTPP_bon_HC_CT_191
+ 66  68  dfTPP_bon_HC_CT_191
+ 69  70  dfTPP_bon_HC_CT_191
+ 69  71  dfTPP_bon_HC_CT_191
+ 69  72  dfTPP_bon_HC_CT_191
+  4   7  dfTPP_bon_OS_CT_213
+  7   8  dfTPP_bon_OS_CT_213
+ 11  14  dfTPP_bon_OS_CT_213
+ 14  15  dfTPP_bon_OS_CT_213
+ 18  21  dfTPP_bon_OS_CT_213
+ 21  22  dfTPP_bon_OS_CT_213
+ 25  28  dfTPP_bon_OS_CT_213
+ 28  29  dfTPP_bon_OS_CT_213
+ 32  35  dfTPP_bon_OS_CT_213
+ 35  36  dfTPP_bon_OS_CT_213
+  8  11  dfTPP_bon_CT_CT_187
+ 15  18  dfTPP_bon_CT_CT_187
+ 22  25  dfTPP_bon_CT_CT_187
+ 29  32  dfTPP_bon_CT_CT_187
+ 36  39  dfTPP_bon_CT_CT_187
+ 39  42  dfTPP_bon_CT_CT_187
+ 42  45  dfTPP_bon_CT_CT_187
+ 45  48  dfTPP_bon_CT_CT_187
+ 48  51  dfTPP_bon_CT_CT_187
+ 51  54  dfTPP_bon_CT_CT_187
+ 54  57  dfTPP_bon_CT_CT_187
+ 57  60  dfTPP_bon_CT_CT_187
+ 60  63  dfTPP_bon_CT_CT_187
+ 63  66  dfTPP_bon_CT_CT_187
+ 66  69  dfTPP_bon_CT_CT_187
+
+[ angles ]
+  1   2   3  dfTPP_ang_O2_C_3_O2_197
+  1   2   4  dfTPP_ang_O2_C_3_CT_124
+  3   2   4  dfTPP_ang_O2_C_3_CT_124
+  2   4   5  dfTPP_ang_HC_CT_C_3_470
+  2   4   6  dfTPP_ang_HC_CT_C_3_470
+  2   4   7  dfTPP_ang_OS_CT_C_3_889
+  5   4   6  dfTPP_ang_HC_CT_HC_555
+  9   8  10  dfTPP_ang_HC_CT_HC_555
+ 12  11  13  dfTPP_ang_HC_CT_HC_555
+ 16  15  17  dfTPP_ang_HC_CT_HC_555
+ 19  18  20  dfTPP_ang_HC_CT_HC_555
+ 23  22  24  dfTPP_ang_HC_CT_HC_555
+ 26  25  27  dfTPP_ang_HC_CT_HC_555
+ 30  29  31  dfTPP_ang_HC_CT_HC_555
+ 33  32  34  dfTPP_ang_HC_CT_HC_555
+ 37  36  38  dfTPP_ang_HC_CT_HC_555
+ 40  39  41  dfTPP_ang_HC_CT_HC_555
+ 43  42  44  dfTPP_ang_HC_CT_HC_555
+ 46  45  47  dfTPP_ang_HC_CT_HC_555
+ 49  48  50  dfTPP_ang_HC_CT_HC_555
+ 52  51  53  dfTPP_ang_HC_CT_HC_555
+ 55  54  56  dfTPP_ang_HC_CT_HC_555
+ 58  57  59  dfTPP_ang_HC_CT_HC_555
+ 61  60  62  dfTPP_ang_HC_CT_HC_555
+ 64  63  65  dfTPP_ang_HC_CT_HC_555
+ 67  66  68  dfTPP_ang_HC_CT_HC_555
+ 70  69  71  dfTPP_ang_HC_CT_HC_555
+ 70  69  72  dfTPP_ang_HC_CT_HC_555
+ 71  69  72  dfTPP_ang_HC_CT_HC_555
+  5   4   7  dfTPP_ang_OS_CT_HC_592
+  6   4   7  dfTPP_ang_OS_CT_HC_592
+  7   8   9  dfTPP_ang_OS_CT_HC_592
+  7   8  10  dfTPP_ang_OS_CT_HC_592
+ 12  11  14  dfTPP_ang_OS_CT_HC_592
+ 13  11  14  dfTPP_ang_OS_CT_HC_592
+ 14  15  16  dfTPP_ang_OS_CT_HC_592
+ 14  15  17  dfTPP_ang_OS_CT_HC_592
+ 19  18  21  dfTPP_ang_OS_CT_HC_592
+ 20  18  21  dfTPP_ang_OS_CT_HC_592
+ 21  22  23  dfTPP_ang_OS_CT_HC_592
+ 21  22  24  dfTPP_ang_OS_CT_HC_592
+ 26  25  28  dfTPP_ang_OS_CT_HC_592
+ 27  25  28  dfTPP_ang_OS_CT_HC_592
+ 28  29  30  dfTPP_ang_OS_CT_HC_592
+ 28  29  31  dfTPP_ang_OS_CT_HC_592
+ 33  32  35  dfTPP_ang_OS_CT_HC_592
+ 34  32  35  dfTPP_ang_OS_CT_HC_592
+ 35  36  37  dfTPP_ang_OS_CT_HC_592
+ 35  36  38  dfTPP_ang_OS_CT_HC_592
+  4   7   8  dfTPP_ang_CT_OS_CT_757
+ 11  14  15  dfTPP_ang_CT_OS_CT_757
+ 18  21  22  dfTPP_ang_CT_OS_CT_757
+ 25  28  29  dfTPP_ang_CT_OS_CT_757
+ 32  35  36  dfTPP_ang_CT_OS_CT_757
+  7   8  11  dfTPP_ang_OS_CT_CT_539
+  8  11  14  dfTPP_ang_OS_CT_CT_539
+ 14  15  18  dfTPP_ang_OS_CT_CT_539
+ 15  18  21  dfTPP_ang_OS_CT_CT_539
+ 21  22  25  dfTPP_ang_OS_CT_CT_539
+ 22  25  28  dfTPP_ang_OS_CT_CT_539
+ 28  29  32  dfTPP_ang_OS_CT_CT_539
+ 29  32  35  dfTPP_ang_OS_CT_CT_539
+ 35  36  39  dfTPP_ang_OS_CT_CT_539
+  9   8  11  dfTPP_ang_HC_CT_CT_507
+ 10   8  11  dfTPP_ang_HC_CT_CT_507
+  8  11  12  dfTPP_ang_HC_CT_CT_507
+  8  11  13  dfTPP_ang_HC_CT_CT_507
+ 16  15  18  dfTPP_ang_HC_CT_CT_507
+ 17  15  18  dfTPP_ang_HC_CT_CT_507
+ 15  18  19  dfTPP_ang_HC_CT_CT_507
+ 15  18  20  dfTPP_ang_HC_CT_CT_507
+ 23  22  25  dfTPP_ang_HC_CT_CT_507
+ 24  22  25  dfTPP_ang_HC_CT_CT_507
+ 22  25  26  dfTPP_ang_HC_CT_CT_507
+ 22  25  27  dfTPP_ang_HC_CT_CT_507
+ 30  29  32  dfTPP_ang_HC_CT_CT_507
+ 31  29  32  dfTPP_ang_HC_CT_CT_507
+ 29  32  33  dfTPP_ang_HC_CT_CT_507
+ 29  32  34  dfTPP_ang_HC_CT_CT_507
+ 37  36  39  dfTPP_ang_HC_CT_CT_507
+ 38  36  39  dfTPP_ang_HC_CT_CT_507
+ 36  39  40  dfTPP_ang_HC_CT_CT_507
+ 36  39  41  dfTPP_ang_HC_CT_CT_507
+ 40  39  42  dfTPP_ang_HC_CT_CT_507
+ 41  39  42  dfTPP_ang_HC_CT_CT_507
+ 39  42  43  dfTPP_ang_HC_CT_CT_507
+ 39  42  44  dfTPP_ang_HC_CT_CT_507
+ 43  42  45  dfTPP_ang_HC_CT_CT_507
+ 44  42  45  dfTPP_ang_HC_CT_CT_507
+ 42  45  46  dfTPP_ang_HC_CT_CT_507
+ 42  45  47  dfTPP_ang_HC_CT_CT_507
+ 46  45  48  dfTPP_ang_HC_CT_CT_507
+ 47  45  48  dfTPP_ang_HC_CT_CT_507
+ 45  48  49  dfTPP_ang_HC_CT_CT_507
+ 45  48  50  dfTPP_ang_HC_CT_CT_507
+ 49  48  51  dfTPP_ang_HC_CT_CT_507
+ 50  48  51  dfTPP_ang_HC_CT_CT_507
+ 48  51  52  dfTPP_ang_HC_CT_CT_507
+ 48  51  53  dfTPP_ang_HC_CT_CT_507
+ 52  51  54  dfTPP_ang_HC_CT_CT_507
+ 53  51  54  dfTPP_ang_HC_CT_CT_507
+ 51  54  55  dfTPP_ang_HC_CT_CT_507
+ 51  54  56  dfTPP_ang_HC_CT_CT_507
+ 55  54  57  dfTPP_ang_HC_CT_CT_507
+ 56  54  57  dfTPP_ang_HC_CT_CT_507
+ 54  57  58  dfTPP_ang_HC_CT_CT_507
+ 54  57  59  dfTPP_ang_HC_CT_CT_507
+ 58  57  60  dfTPP_ang_HC_CT_CT_507
+ 59  57  60  dfTPP_ang_HC_CT_CT_507
+ 57  60  61  dfTPP_ang_HC_CT_CT_507
+ 57  60  62  dfTPP_ang_HC_CT_CT_507
+ 61  60  63  dfTPP_ang_HC_CT_CT_507
+ 62  60  63  dfTPP_ang_HC_CT_CT_507
+ 60  63  64  dfTPP_ang_HC_CT_CT_507
+ 60  63  65  dfTPP_ang_HC_CT_CT_507
+ 64  63  66  dfTPP_ang_HC_CT_CT_507
+ 65  63  66  dfTPP_ang_HC_CT_CT_507
+ 63  66  67  dfTPP_ang_HC_CT_CT_507
+ 63  66  68  dfTPP_ang_HC_CT_CT_507
+ 67  66  69  dfTPP_ang_HC_CT_CT_507
+ 68  66  69  dfTPP_ang_HC_CT_CT_507
+ 66  69  70  dfTPP_ang_HC_CT_CT_507
+ 66  69  71  dfTPP_ang_HC_CT_CT_507
+ 66  69  72  dfTPP_ang_HC_CT_CT_507
+ 36  39  42  dfTPP_ang_CT_CT_CT_499
+ 39  42  45  dfTPP_ang_CT_CT_CT_499
+ 42  45  48  dfTPP_ang_CT_CT_CT_499
+ 45  48  51  dfTPP_ang_CT_CT_CT_499
+ 48  51  54  dfTPP_ang_CT_CT_CT_499
+ 51  54  57  dfTPP_ang_CT_CT_CT_499
+ 54  57  60  dfTPP_ang_CT_CT_CT_499
+ 57  60  63  dfTPP_ang_CT_CT_CT_499
+ 60  63  66  dfTPP_ang_CT_CT_CT_499
+ 63  66  69  dfTPP_ang_CT_CT_CT_499
+
+[ dihedrals ]
+  1   2   4   5  dfTPP_dih_O2_C_3_CT_HC_533
+  1   2   4   6  dfTPP_dih_O2_C_3_CT_HC_533
+  3   2   4   5  dfTPP_dih_O2_C_3_CT_HC_533
+  3   2   4   6  dfTPP_dih_O2_C_3_CT_HC_533
+  1   2   4   7  dfTPP_dih_OS_CT_C_3_O2_1771
+  3   2   4   7  dfTPP_dih_OS_CT_C_3_O2_1771
+  2   4   7   8  dfTPP_dih_C_3_CT_OS_CT_924
+  5   4   7   8  dfTPP_dih_HC_CT_OS_CT_362
+  6   4   7   8  dfTPP_dih_HC_CT_OS_CT_362
+  4   7   8   9  dfTPP_dih_HC_CT_OS_CT_362
+  4   7   8  10  dfTPP_dih_HC_CT_OS_CT_362
+ 12  11  14  15  dfTPP_dih_HC_CT_OS_CT_362
+ 13  11  14  15  dfTPP_dih_HC_CT_OS_CT_362
+ 11  14  15  16  dfTPP_dih_HC_CT_OS_CT_362
+ 11  14  15  17  dfTPP_dih_HC_CT_OS_CT_362
+ 19  18  21  22  dfTPP_dih_HC_CT_OS_CT_362
+ 20  18  21  22  dfTPP_dih_HC_CT_OS_CT_362
+ 18  21  22  23  dfTPP_dih_HC_CT_OS_CT_362
+ 18  21  22  24  dfTPP_dih_HC_CT_OS_CT_362
+ 26  25  28  29  dfTPP_dih_HC_CT_OS_CT_362
+ 27  25  28  29  dfTPP_dih_HC_CT_OS_CT_362
+ 25  28  29  30  dfTPP_dih_HC_CT_OS_CT_362
+ 25  28  29  31  dfTPP_dih_HC_CT_OS_CT_362
+ 33  32  35  36  dfTPP_dih_HC_CT_OS_CT_362
+ 34  32  35  36  dfTPP_dih_HC_CT_OS_CT_362
+ 32  35  36  37  dfTPP_dih_HC_CT_OS_CT_362
+ 32  35  36  38  dfTPP_dih_HC_CT_OS_CT_362
+ 11  14  15  18  dfTPP_dih_CT_CT_OS_CT_320
+ 18  21  22  25  dfTPP_dih_CT_CT_OS_CT_320
+ 25  28  29  32  dfTPP_dih_CT_CT_OS_CT_320
+ 32  35  36  39  dfTPP_dih_CT_CT_OS_CT_320
+  8  11  14  15  dfTPP_dih_CT_CT_OS_CT_320
+  7   8  11  12  dfTPP_dih_OS_CT_CT_HC_518
+  7   8  11  13  dfTPP_dih_OS_CT_CT_HC_518
+  9   8  11  14  dfTPP_dih_OS_CT_CT_HC_518
+ 10   8  11  14  dfTPP_dih_OS_CT_CT_HC_518
+ 14  15  18  19  dfTPP_dih_OS_CT_CT_HC_518
+ 14  15  18  20  dfTPP_dih_OS_CT_CT_HC_518
+ 16  15  18  21  dfTPP_dih_OS_CT_CT_HC_518
+ 17  15  18  21  dfTPP_dih_OS_CT_CT_HC_518
+ 21  22  25  26  dfTPP_dih_OS_CT_CT_HC_518
+ 21  22  25  27  dfTPP_dih_OS_CT_CT_HC_518
+ 23  22  25  28  dfTPP_dih_OS_CT_CT_HC_518
+ 24  22  25  28  dfTPP_dih_OS_CT_CT_HC_518
+ 28  29  32  33  dfTPP_dih_OS_CT_CT_HC_518
+ 28  29  32  34  dfTPP_dih_OS_CT_CT_HC_518
+ 30  29  32  35  dfTPP_dih_OS_CT_CT_HC_518
+ 31  29  32  35  dfTPP_dih_OS_CT_CT_HC_518
+ 35  36  39  40  dfTPP_dih_OS_CT_CT_HC_518
+ 35  36  39  41  dfTPP_dih_OS_CT_CT_HC_518
+  7   8  11  14  dfTPP_dih_OS_CT_CT_OS_595
+ 14  15  18  21  dfTPP_dih_OS_CT_CT_OS_595
+ 21  22  25  28  dfTPP_dih_OS_CT_CT_OS_595
+ 28  29  32  35  dfTPP_dih_OS_CT_CT_OS_595
+  9   8  11  12  dfTPP_dih_HC_CT_CT_HC_510
+  9   8  11  13  dfTPP_dih_HC_CT_CT_HC_510
+ 10   8  11  12  dfTPP_dih_HC_CT_CT_HC_510
+ 10   8  11  13  dfTPP_dih_HC_CT_CT_HC_510
+ 16  15  18  19  dfTPP_dih_HC_CT_CT_HC_510
+ 16  15  18  20  dfTPP_dih_HC_CT_CT_HC_510
+ 17  15  18  19  dfTPP_dih_HC_CT_CT_HC_510
+ 17  15  18  20  dfTPP_dih_HC_CT_CT_HC_510
+ 23  22  25  26  dfTPP_dih_HC_CT_CT_HC_510
+ 23  22  25  27  dfTPP_dih_HC_CT_CT_HC_510
+ 24  22  25  26  dfTPP_dih_HC_CT_CT_HC_510
+ 24  22  25  27  dfTPP_dih_HC_CT_CT_HC_510
+ 30  29  32  33  dfTPP_dih_HC_CT_CT_HC_510
+ 30  29  32  34  dfTPP_dih_HC_CT_CT_HC_510
+ 31  29  32  33  dfTPP_dih_HC_CT_CT_HC_510
+ 31  29  32  34  dfTPP_dih_HC_CT_CT_HC_510
+ 37  36  39  40  dfTPP_dih_HC_CT_CT_HC_510
+ 37  36  39  41  dfTPP_dih_HC_CT_CT_HC_510
+ 38  36  39  40  dfTPP_dih_HC_CT_CT_HC_510
+ 38  36  39  41  dfTPP_dih_HC_CT_CT_HC_510
+ 40  39  42  43  dfTPP_dih_HC_CT_CT_HC_510
+ 40  39  42  44  dfTPP_dih_HC_CT_CT_HC_510
+ 41  39  42  43  dfTPP_dih_HC_CT_CT_HC_510
+ 41  39  42  44  dfTPP_dih_HC_CT_CT_HC_510
+ 43  42  45  46  dfTPP_dih_HC_CT_CT_HC_510
+ 43  42  45  47  dfTPP_dih_HC_CT_CT_HC_510
+ 44  42  45  46  dfTPP_dih_HC_CT_CT_HC_510
+ 44  42  45  47  dfTPP_dih_HC_CT_CT_HC_510
+ 46  45  48  49  dfTPP_dih_HC_CT_CT_HC_510
+ 46  45  48  50  dfTPP_dih_HC_CT_CT_HC_510
+ 47  45  48  49  dfTPP_dih_HC_CT_CT_HC_510
+ 47  45  48  50  dfTPP_dih_HC_CT_CT_HC_510
+ 49  48  51  52  dfTPP_dih_HC_CT_CT_HC_510
+ 49  48  51  53  dfTPP_dih_HC_CT_CT_HC_510
+ 50  48  51  52  dfTPP_dih_HC_CT_CT_HC_510
+ 50  48  51  53  dfTPP_dih_HC_CT_CT_HC_510
+ 52  51  54  55  dfTPP_dih_HC_CT_CT_HC_510
+ 52  51  54  56  dfTPP_dih_HC_CT_CT_HC_510
+ 53  51  54  55  dfTPP_dih_HC_CT_CT_HC_510
+ 53  51  54  56  dfTPP_dih_HC_CT_CT_HC_510
+ 55  54  57  58  dfTPP_dih_HC_CT_CT_HC_510
+ 55  54  57  59  dfTPP_dih_HC_CT_CT_HC_510
+ 56  54  57  58  dfTPP_dih_HC_CT_CT_HC_510
+ 56  54  57  59  dfTPP_dih_HC_CT_CT_HC_510
+ 58  57  60  61  dfTPP_dih_HC_CT_CT_HC_510
+ 58  57  60  62  dfTPP_dih_HC_CT_CT_HC_510
+ 59  57  60  61  dfTPP_dih_HC_CT_CT_HC_510
+ 59  57  60  62  dfTPP_dih_HC_CT_CT_HC_510
+ 61  60  63  64  dfTPP_dih_HC_CT_CT_HC_510
+ 61  60  63  65  dfTPP_dih_HC_CT_CT_HC_510
+ 62  60  63  64  dfTPP_dih_HC_CT_CT_HC_510
+ 62  60  63  65  dfTPP_dih_HC_CT_CT_HC_510
+ 64  63  66  67  dfTPP_dih_HC_CT_CT_HC_510
+ 64  63  66  68  dfTPP_dih_HC_CT_CT_HC_510
+ 65  63  66  67  dfTPP_dih_HC_CT_CT_HC_510
+ 65  63  66  68  dfTPP_dih_HC_CT_CT_HC_510
+ 67  66  69  70  dfTPP_dih_HC_CT_CT_HC_510
+ 67  66  69  71  dfTPP_dih_HC_CT_CT_HC_510
+ 67  66  69  72  dfTPP_dih_HC_CT_CT_HC_510
+ 68  66  69  70  dfTPP_dih_HC_CT_CT_HC_510
+ 68  66  69  71  dfTPP_dih_HC_CT_CT_HC_510
+ 68  66  69  72  dfTPP_dih_HC_CT_CT_HC_510
+ 15  18  21  22  dfTPP_dih_CT_OS_CT_CT_320
+ 22  25  28  29  dfTPP_dih_CT_OS_CT_CT_320
+ 29  32  35  36  dfTPP_dih_CT_OS_CT_CT_320
+  4   7   8  11  dfTPP_dih_CT_OS_CT_CT_320
+ 35  36  39  42  dfTPP_dih_OS_CT_CT_CT_296
+ 37  36  39  42  dfTPP_dih_HC_CT_CT_CT_287
+ 38  36  39  42  dfTPP_dih_HC_CT_CT_CT_287
+ 36  39  42  43  dfTPP_dih_HC_CT_CT_CT_287
+ 36  39  42  44  dfTPP_dih_HC_CT_CT_CT_287
+ 40  39  42  45  dfTPP_dih_HC_CT_CT_CT_287
+ 41  39  42  45  dfTPP_dih_HC_CT_CT_CT_287
+ 39  42  45  46  dfTPP_dih_HC_CT_CT_CT_287
+ 39  42  45  47  dfTPP_dih_HC_CT_CT_CT_287
+ 43  42  45  48  dfTPP_dih_HC_CT_CT_CT_287
+ 44  42  45  48  dfTPP_dih_HC_CT_CT_CT_287
+ 42  45  48  49  dfTPP_dih_HC_CT_CT_CT_287
+ 42  45  48  50  dfTPP_dih_HC_CT_CT_CT_287
+ 46  45  48  51  dfTPP_dih_HC_CT_CT_CT_287
+ 47  45  48  51  dfTPP_dih_HC_CT_CT_CT_287
+ 45  48  51  52  dfTPP_dih_HC_CT_CT_CT_287
+ 45  48  51  53  dfTPP_dih_HC_CT_CT_CT_287
+ 49  48  51  54  dfTPP_dih_HC_CT_CT_CT_287
+ 50  48  51  54  dfTPP_dih_HC_CT_CT_CT_287
+ 48  51  54  55  dfTPP_dih_HC_CT_CT_CT_287
+ 48  51  54  56  dfTPP_dih_HC_CT_CT_CT_287
+ 52  51  54  57  dfTPP_dih_HC_CT_CT_CT_287
+ 53  51  54  57  dfTPP_dih_HC_CT_CT_CT_287
+ 51  54  57  58  dfTPP_dih_HC_CT_CT_CT_287
+ 51  54  57  59  dfTPP_dih_HC_CT_CT_CT_287
+ 55  54  57  60  dfTPP_dih_HC_CT_CT_CT_287
+ 56  54  57  60  dfTPP_dih_HC_CT_CT_CT_287
+ 54  57  60  61  dfTPP_dih_HC_CT_CT_CT_287
+ 54  57  60  62  dfTPP_dih_HC_CT_CT_CT_287
+ 58  57  60  63  dfTPP_dih_HC_CT_CT_CT_287
+ 59  57  60  63  dfTPP_dih_HC_CT_CT_CT_287
+ 57  60  63  64  dfTPP_dih_HC_CT_CT_CT_287
+ 57  60  63  65  dfTPP_dih_HC_CT_CT_CT_287
+ 61  60  63  66  dfTPP_dih_HC_CT_CT_CT_287
+ 62  60  63  66  dfTPP_dih_HC_CT_CT_CT_287
+ 60  63  66  67  dfTPP_dih_HC_CT_CT_CT_287
+ 60  63  66  68  dfTPP_dih_HC_CT_CT_CT_287
+ 64  63  66  69  dfTPP_dih_HC_CT_CT_CT_287
+ 65  63  66  69  dfTPP_dih_HC_CT_CT_CT_287
+ 63  66  69  70  dfTPP_dih_HC_CT_CT_CT_287
+ 63  66  69  71  dfTPP_dih_HC_CT_CT_CT_287
+ 63  66  69  72  dfTPP_dih_HC_CT_CT_CT_287
+ 36  39  42  45  dfTPP_dih_CT_CT_CT_CT_284
+ 39  42  45  48  dfTPP_dih_CT_CT_CT_CT_284
+ 42  45  48  51  dfTPP_dih_CT_CT_CT_CT_284
+ 45  48  51  54  dfTPP_dih_CT_CT_CT_CT_284
+ 48  51  54  57  dfTPP_dih_CT_CT_CT_CT_284
+ 51  54  57  60  dfTPP_dih_CT_CT_CT_CT_284
+ 54  57  60  63  dfTPP_dih_CT_CT_CT_CT_284
+ 57  60  63  66  dfTPP_dih_CT_CT_CT_CT_284
+ 60  63  66  69  dfTPP_dih_CT_CT_CT_CT_284
+
+[ dihedrals ]
+  3   4   2   1  improper_O_C_X_Y
+
+[ pairs ]
+;
+  1   5  1
+  1   6  1
+  1   7  1
+  3   5  1
+  3   6  1
+  3   7  1
+  2   8  1
+  5   8  1
+  6   8  1
+  4   9  1
+  4  10  1
+  4  11  1
+  7  12  1
+  7  13  1
+  7  14  1
+  9  12  1
+  9  13  1
+  9  14  1
+ 10  12  1
+ 10  13  1
+ 10  14  1
+  8  15  1
+ 12  15  1
+ 13  15  1
+ 11  16  1
+ 11  17  1
+ 11  18  1
+ 14  19  1
+ 14  20  1
+ 14  21  1
+ 16  19  1
+ 16  20  1
+ 16  21  1
+ 17  19  1
+ 17  20  1
+ 17  21  1
+ 15  22  1
+ 19  22  1
+ 20  22  1
+ 18  23  1
+ 18  24  1
+ 18  25  1
+ 21  26  1
+ 21  27  1
+ 21  28  1
+ 23  26  1
+ 23  27  1
+ 23  28  1
+ 24  26  1
+ 24  27  1
+ 24  28  1
+ 22  29  1
+ 26  29  1
+ 27  29  1
+ 25  30  1
+ 25  31  1
+ 25  32  1
+ 28  33  1
+ 28  34  1
+ 28  35  1
+ 30  33  1
+ 30  34  1
+ 30  35  1
+ 31  33  1
+ 31  34  1
+ 31  35  1
+ 29  36  1
+ 33  36  1
+ 34  36  1
+ 32  37  1
+ 32  38  1
+ 32  39  1
+ 35  40  1
+ 35  41  1
+ 35  42  1
+ 37  40  1
+ 37  41  1
+ 37  42  1
+ 38  40  1
+ 38  41  1
+ 38  42  1
+ 36  43  1
+ 36  44  1
+ 36  45  1
+ 40  43  1
+ 40  44  1
+ 40  45  1
+ 41  43  1
+ 41  44  1
+ 41  45  1
+ 39  46  1
+ 39  47  1
+ 39  48  1
+ 43  46  1
+ 43  47  1
+ 43  48  1
+ 44  46  1
+ 44  47  1
+ 44  48  1
+ 42  49  1
+ 42  50  1
+ 42  51  1
+ 46  49  1
+ 46  50  1
+ 46  51  1
+ 47  49  1
+ 47  50  1
+ 47  51  1
+ 45  52  1
+ 45  53  1
+ 45  54  1
+ 49  52  1
+ 49  53  1
+ 49  54  1
+ 50  52  1
+ 50  53  1
+ 50  54  1
+ 48  55  1
+ 48  56  1
+ 48  57  1
+ 52  55  1
+ 52  56  1
+ 52  57  1
+ 53  55  1
+ 53  56  1
+ 53  57  1
+ 51  58  1
+ 51  59  1
+ 51  60  1
+ 55  58  1
+ 55  59  1
+ 55  60  1
+ 56  58  1
+ 56  59  1
+ 56  60  1
+ 54  61  1
+ 54  62  1
+ 54  63  1
+ 58  61  1
+ 58  62  1
+ 58  63  1
+ 59  61  1
+ 59  62  1
+ 59  63  1
+ 57  64  1
+ 57  65  1
+ 57  66  1
+ 61  64  1
+ 61  65  1
+ 61  66  1
+ 62  64  1
+ 62  65  1
+ 62  66  1
+ 60  67  1
+ 60  68  1
+ 60  69  1
+ 64  67  1
+ 64  68  1
+ 64  69  1
+ 65  67  1
+ 65  68  1
+ 65  69  1
+ 63  70  1
+ 63  71  1
+ 63  72  1
+ 67  70  1
+ 67  71  1
+ 67  72  1
+ 68  70  1
+ 68  71  1
+ 68  72  1
+; end of TPPMKTOP topology
+

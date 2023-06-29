@@ -1,0 +1,43 @@
+integrator          =  md
+tinit               =  0
+dt                  =  0.001
+nsteps              =  1000000
+
+comm_mode           =  linear
+nstlog              =  1000
+nstcomm             =  100
+nstxout             =  0
+nstvout             =  0
+nstenergy           =  100
+nstxtcout           =  5000
+nstlist             =  10
+ns_type             =  grid
+
+rlist               =  1.4
+rcoulomb            =  1.4 
+rvdw                =  1.4 
+
+coulombtype         =  pme
+fourierspacing      =  0.12
+pme-order           =  4
+ewald-rtol          =  1e-5
+cutoff-scheme       =  verlet
+
+gen_vel             =  no
+gen_temp            =  298
+
+tcoupl              =  v-rescale 
+tc_grps             =  system
+tau_t               =  0.5
+ref_t               =  298
+
+constraints          = h-bonds
+constraint_algorithm = lincs 
+continuation         = yes
+
+Pcoupl               = berendsen                    
+Pcoupltype           = anisotropic                  
+nstpcouple           = -1                           
+ref-p                = 600.0 600.0 600.0 0.0 0.0 0.0      
+tau-p                = 10.0                         
+compressibility      = 3e-6 3e-6 5e-5 0.0 0.0 0.0   

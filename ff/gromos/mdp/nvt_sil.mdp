@@ -1,0 +1,37 @@
+integrator          =  md; steep; md; steep; md ; steep ; md
+tinit               =  0
+dt                  =  0.002
+nsteps              =  TIME
+
+comm_mode           =  Linear ; Angular ; Linear
+nstcomm             =  100
+nstxout             =  0
+nstvout             =  0
+nstxtcout           =  5000
+nstlist             =  10
+ns_type             =  grid
+
+rlist               =  1.4 ; 0.4;  0.02; 1.0; 0.2;
+rcoulomb            =  1.4 ; 0.4; 0.02; 1.0
+rvdw                =  1.4 ; 0.4; 0.02; 1.0
+
+coulombtype         =  PME ; User; Cut-off
+fourierspacing      =  0.25
+pme-order           =  4
+ewald-rtol          =  1e-5
+cutoff-scheme       =  Verlet
+
+tcoupl              =  v-rescale ; berendsen
+tc_grps             =  System
+tau_t               =  3
+ref_t               =  TEMP; 30 ; 300
+
+freezegrps          =  Hhh Sil Osi Oxi Sih Ooh
+freezedim           =  Y Y Y  Y Y Y  Y Y Y  Y Y Y  Y Y Y  Y Y Y
+
+gen_vel             =  yes ; no
+gen_temp            =  TEMP
+
+constraints          = all-bonds ; none; all-bonds
+constraint_algorithm = lincs ;shake
+continuation         = no ; ; no; yes ;no

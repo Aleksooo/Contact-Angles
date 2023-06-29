@@ -1,0 +1,71 @@
+[ moleculetype ]
+; name    nrexcl
+PDP      3 
+
+[ atoms ]
+ ;  nr    type  resnr   residue    atom    chnr     charge 
+    1      O      1      PDPOH       O1       1       -0.57
+    2      C      1      PDPRI       C2       2        0.16
+    3      C      1      PDPRI       C3       3        0.01
+    4      C      1      PDPRI       C4       4       -0.43
+    5      C      1      PDPRI       C5       5        0.80
+    6      O      1      PDPOH       O2       6       -0.65
+    7     NR      1      PDPRI       N7       7       -0.67
+    8      C      1      PDPRI       C6       8        0.15
+    9      H      1      PDPOH       H1       9        0.40
+   10      H      1      PDPRI       H2      10        0.13
+   11      H      1      PDPRI       H3      11        0.18
+   12      H      1      PDPOH       H4      12        0.41
+   13      H      1      PDPRI       H5      13        0.08
+   
+[ bonds ]       
+;    i    j   func
+    1    2   2 	 
+    2    3   2 		
+    3    4   2 	
+    3   10   2 	
+    4    5   2 	
+    4   11   2 	
+    5    6   2 	 
+    5    7   2 	
+    6   12   2 	
+    7    8   2 	
+    8   13   2
+    8    2   2
+    9    1   2
+
+[ angles ]    
+;    i    j    k   func
+    1    2    3   2
+    1    2    8   2
+    2    1    9   2
+    2    3   10   2
+    2    3    4   2
+    3    4    5   2
+    3    4   11   2
+    4    3   10   2
+    4    5    6   2
+    4    5    7   2
+    5    4   11   2
+    5    6   12   2 
+    6    5    7   2
+    7    8   13   2
+    7    8    2   2
+    8    2    1   2
+    8    2    3   2
+
+[dihedrals]	
+ ;   i    j    k    l   func	
+     2    3    4    5     2
+     3    4    5    7     2
+     4    5    7    8     2
+     5    7    8    2     2
+     7    8    2    3     2
+     8    2    3    4     2
+    11    4    3   10     2
+    10    3    2    1     2
+     1    2    8   13     2
+     6    5    4   11     2
+     1    2    3    4     1
+     6    5    4    3     1
+      	

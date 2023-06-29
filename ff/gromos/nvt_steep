@@ -1,0 +1,23 @@
+cd /usrn7n/kopan/oil/diffusion/298/d_835/
+/usr/local/gromacs2016/bin/gmx grompp -p GROMOS -c d_835 -o d_835 -f NVT_steep
+/usr/local/gromacs2016/bin/gmx mdrun -deffnm d_835 -s -o -x -c -e -g -v
+
+cd /usrn7n/kopan/oil/diffusion/298/dw_167_7199/
+/usr/local/gromacs2016/bin/gmx grompp -p GROMOS -c dw_167_7199 -o dw_167_7199 -f NVT_steep
+/usr/local/gromacs2016/bin/gmx mdrun -deffnm dw_167_7199 -s -o -x -c -e -g -v
+
+cd /usrn7n/kopan/oil/diffusion/298/dw_334_5399/
+/usr/local/gromacs2016/bin/gmx grompp -p GROMOS -c dw_334_5399 -o dw_334_5399 -f NVT_steep
+/usr/local/gromacs2016/bin/gmx mdrun -deffnm dw_334_5399 -s -o -x -c -e -g -v
+
+cd /usrn7n/kopan/oil/diffusion/298/dw_501_3599/
+/usr/local/gromacs2016/bin/gmx grompp -p GROMOS -c dw_501_3599 -o dw_501_3599 -f NVT_steep
+/usr/local/gromacs2016/bin/gmx mdrun -deffnm dw_501_3599 -s -o -x -c -e -g -v
+
+cd /usrn7n/kopan/oil/diffusion/298/dw_668_1800/
+/usr/local/gromacs2016/bin/gmx grompp -p GROMOS -c dw_668_1800 -o dw_668_1800 -f NVT_steep
+/usr/local/gromacs2016/bin/gmx mdrun -deffnm dw_668_1800 -s -o -x -c -e -g -v
+
+cd /usrn7n/kopan/oil/diffusion/298/w_8998/
+/usr/local/gromacs2016/bin/gmx grompp -p GROMOS -c w_8998 -o w_8998 -f NVT_steep
+/usr/local/gromacs2016/bin/gmx mdrun -deffnm w_8998 -s -o -x -c -e -g -v

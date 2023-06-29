@@ -1,0 +1,68 @@
+[ moleculetype ]
+; name    nrexcl
+PPH      3 
+
+[ atoms ]
+ ;  nr    type  resnr   residue    atom    chnr     charge 
+    1       O      1      PPHOH      O1       1       -0.65
+    2       C      1      PPHRI      C2       2        0.72
+    3       C      1      PPHRI      C3       3       -0.59
+    4       C      1      PPHRI      C4       4        0.51
+    5      NR      1      PPHRI      N5       5       -0.70
+    6       C      1      PPHRI      C6       6        0.51
+    7       C      1      PPHRI      C7       7       -0.59
+    8       H      1      PPHOH      H8       8        0.43
+    9       H      1      PPHRI      H9       9        0.18
+   10       H      1      PPHRI     H10      10        0.00
+   11       H      1      PPHRI     H11      11        0.00
+   12       H      1      PPHRI     H12      12        0.18
+
+   
+[ bonds ]       
+;    i    j   func
+    1    2   2 	 
+    2    3   2 	
+    2    7   2 	
+    3    4   2 	
+    3    9   2 	
+    4    5   2 	
+    4   10   2 	
+    5    6   2 	 
+    6    7   2 	
+    6   11   2 	
+    7   12   2 	
+    8    1   2
+
+[ angles ]    
+ ;   i    j    k   func
+    1    2    3   2
+    1    2    7   2
+    2    1    8   2
+    2    3    9   2
+    2    3    4   2
+    2    7   12   2
+    3    4    5   2
+    3    4   10   2
+    4    5    6   2
+    5    4   10   2
+    5    6    7   2
+    5    6   11   2  
+    6    7   12   2
+    6    7    2   2
+    8    1    2   2
+    7    6   11   2
+    4    3    9   2
+
+[dihedrals]	
+;    i    j    k    l   func	
+     2    3    4    5    2
+     3    4    5    6    2
+     4    5    6    7    2
+     5    6    7    2    2
+     6    7    2    3    2
+     7    2    3    4    2
+     1    2    3    9    2
+     9    3    4   10    2
+    11    6    7   12    2
+    12    7    2    1    2 
+     8    1    2    3    1

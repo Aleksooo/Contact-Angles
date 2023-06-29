@@ -1,0 +1,68 @@
+[ moleculetype ]
+; name    nrexcl
+  tetradecane      3
+
+[ atoms ]
+;  nr    type  resnr   residue    atom    chnr     charge
+    1     CH3      1    TETRD      C1       1       0.00
+    2     CH2      1    TETRD      C2       2       0.00
+    3     CH2      1    TETRD      C3       3       0.00
+    4     CH2      1    TETRD      C4       4       0.00
+    5     CH2      1    TETRD      C5       5       0.00 
+    6     CH2      1    TETRD      C6       6       0.00
+    7     CH2      1    TETRD      C7       7       0.00  
+    8     CH2      1    TETRD      C8       8       0.00
+    9     CH2      1    TETRD      C9       9       0.00 
+   10     CH2      1    TETRD     C10      10       0.00
+   11     CH2      1    TETRD     C11      11       0.00
+   12     CH2      1    TETRD     C12      12       0.00 
+   13     CH2      1    TETRD     C13      13       0.00
+   14     CH3      1    TETRD     C14      14       0.00  
+
+[ bonds ]
+;   i      j    func
+    1      2       2
+    2      3       2
+    3      4       2
+    4      5       2
+    5      6       2
+    6      7       2
+    7      8       2
+    8      9       2
+    9     10       2
+   10     11       2
+   11     12       2
+   12     13       2
+   13     14       2
+
+   
+[ angles ]
+;   i      j      k    func
+    1      2      3       2
+    2      3      4       2
+    3      4      5       2
+    4      5      6       2
+    5      6      7       2
+    6      7      8       2
+    7      8      9       2
+    8      9      10      2
+    9     10      11      2
+   10     11      12      2
+   11     12      13      2
+   12     13      14      2
+
+
+[ dihedrals ]
+;   i   j   k   l func
+    1   2   3   4    1
+    2   3   4   5    1
+    3   4   5   6    1
+    4   5   6   7    1
+    5   6   7   8    1
+    6   7   8   9    1
+    7   8   9  10    1
+    8   9   10 11    1
+    9   10  11 12    1    
+    10  11 12  13    1
+    11  12 13  14    1
+

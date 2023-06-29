@@ -1,0 +1,122 @@
+[ moleculetype ]
+; Name   nrexcl
+ectd-3nex    3
+
+[ atoms ]
+;  nr  type  resnr  resid  atom  cgnr  charge  
+    1   O_C    1    ECT3H     O6    1   -0.85 
+    2   C_O    1    ECT3H    C21    2    0.40 
+    3    O     1    ECT3H     O5    3   -0.40 
+    4   CH2    1    ECT3H    C20    4    0.25 
+    5    O     1    ECT3H     O4    5   -0.50 
+    6   CH2    1    ECT3H    C19    6    0.25 
+    7   CH2    1    ECT3H    C18    7    0.25 
+    8    O     1    ECT3H     O3    8   -0.50 
+    9   CH2    1    ECT3H    C17    9    0.25 
+   10   CH2    1    ECT3H    C16   10    0.25 
+   11    O     1    ECT3H     O2   11   -0.50 
+   12   CH2    1    ECT3H    C15   12    0.25 
+   13   CH2    1    ECT3H    C14   13    0.25 
+   14    O     1    ECT3H     O1   14   -0.50 
+   15   CH2    1    ECT3T    C13   15    0.25 
+   16   CH2    1    ECT3T    C12   16    0.00 
+   17   CH2    1    ECT3T    C11   17    0.00 
+   18   CH2    1    ECT3T    C10   18    0.00 
+   19   CH2    1    ECT3T     C9   19    0.00 
+   20   CH2    1    ECT3T     C8   20    0.00 
+   21   CH2    1    ECT3T     C7   21    0.00 
+   22   CH2    1    ECT3T     C6   22    0.00 
+   23   CH2    1    ECT3T     C5   23    0.00 
+   24   CH2    1    ECT3T     C4   24    0.00 
+   25   CH2    1    ECT3T     C3   25    0.00 
+   26   CH2    1    ECT3T     C2   26    0.00 
+   27   CH3    1    ECT3T     C1   27    0.00 
+; total charge of the molecule:  -0.85; -1.000
+[ bonds ]
+;  ai   aj  funct   
+    1    2    1   
+    2    3    1   
+    2    4    1   
+    4    5    1   
+    5    6    1   
+    6    7    1   
+    7    8    1   
+    8    9    1   
+    9   10    1   
+   10   11    1   
+   11   12    1  
+   12   13    1   
+   13   14    1   
+   14   15    1  
+   15   16    1  
+   16   17    1   
+   17   18    1   
+   18   19    1   
+   19   20    1   
+   20   21    1   
+   21   22    1   
+   22   23    1   
+   23   24    1   
+   24   25    1   
+   25   26    1   
+   26   27    1  
+ [ angles ]
+;  ai   aj   ak  funct   
+    1    2    3    1   
+    1    2    4    1    
+    3    2    4    1    
+    2    4    5    1    
+    4    5    6    1    
+    5    6    7    1    
+    6    7    8    1    
+    7    8    9    1    
+    8    9   10    1
+    9   10   11    1    
+   10   11   12    1    
+   11   12   13    1    
+   12   13   14    1    
+   13   14   15    1    
+   14   15   16    1
+   15   16   17    1    
+   16   17   18    1    
+   17   18   19    1    
+   18   19   20    1    
+   19   20   21    1    
+   20   21   22    1    
+   21   22   23    1    
+   22   23   24    1    
+   23   24   25    1
+   24   25   26    1
+   25   26   27    1
+[ dihedrals ]
+; GROMOS improper dihedrals
+;  ai   aj   ak   al  funct   angle     fc
+    2    1    3    4    2      0.00   167.36
+[ dihedrals ]
+;  ai   aj   ak   al  funct    ph0      cp     mult
+    2    4    5    6    3      
+    3    2    4    5    3    
+    4    5    6    7    3      
+    5    6    7    8    3      
+    6    7    8    9    3      
+    7    8    9   10    3
+    8    9   10   11    3      
+    9   10   11   12    3      
+   10   11   12   13    3    
+   11   12   13   14    3
+   12   13   14   15    3      
+   13   14   15   16    3      
+   14   15   16   17    3      
+   15   16   17   18    3      
+   16   17   18   19    3      
+   17   18   19   20    3      
+   18   19   20   21    3
+   19   20   21   22    3      
+   20   21   22   23    3      
+   21   22   23   24    3      
+   22   23   24   25    3      
+   23   24   25   26    3      
+   24   25   26   27    3  
+[ exclusions ]
+;  ai   aj  funct  ;  GROMOS 1-4 exclusions
+

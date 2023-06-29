@@ -1,0 +1,53 @@
+[ moleculetype ]
+; name    nrexcl
+  octanol      3
+
+[ atoms ]
+; nr  type resnr residue  atom chnr charge
+   1   CH3     1   OCTOH    C1    1  -0.09
+   2   CH2     1   OCTOH    C2    2   0.12
+   3   CH2     1   OCTOH    C3    3  -0.04
+   4   CH2     1   OCTOH    C4    4  -0.01
+   5   CH2     1   OCTOH    C5    5   0.08 
+   6   CH2     1   OCTOH    C6    6  -0.14
+   7   CH2     1   OCTOH    C7    7   0.12  
+   8   CH2     1   OCTOH    C8    8   0.27
+   9    OA     1   OCTOH    O1    9  -0.74 
+  10     H     1   OCTOH    H1   10   0.43
+
+[ bonds ]
+;  i   j  f
+   1   2  2
+   2   3  2
+   3   4  2
+   4   5  2
+   5   6  2
+   6   7  2
+   7   8  2
+   8   9  2
+   9  10  2
+
+[ angles ]
+;  i   j   k  f
+   1   2   3  2
+   2   3   4  2
+   3   4   5  2
+   4   5   6  2
+   5   6   7  2
+   6   7   8  2
+   7   8   9  2
+   8   9  10  2
+
+[ dihedrals ]
+;  i   j   k   l  f
+   1   2   3   4  1
+   2   3   4   5  1
+   3   4   5   6  1
+   4   5   6   7  1
+   5   6   7   8  1
+   6   7   8   9  1
+   7   8   9  10  1
+   
+[ pairs ]
+;  i   j  f
+   9   6  1

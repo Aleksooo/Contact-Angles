@@ -1,0 +1,55 @@
+[ moleculetype ]
+; name    nrexcl
+  teab      3
+
+[ atoms ]
+; nr  type resnr residue  atom chnr charge
+   1   CH2     1   TEAMM    C1    1   0.19
+   2   CH3     1   TEAMM    C2    2   0.04
+   3   CH2     1   TEAMM    C3    3   0.19
+   4   CH3     1   TEAMM    C4    4   0.04
+   5   CH2     1   TEAMM    C5    5   0.19
+   6   CH3     1   TEAMM    C6    6   0.04
+   7   CH2     1   TEAMM    C7    7   0.19
+   8   CH3     1   TEAMM    C8    8   0.04
+   9    NL     1   TEAMM    N1    9   0.08
+
+[ bonds ]
+;  i   j  f
+   1   2  2
+   3   4  2
+   5   6  2
+   7   8  2
+   1   9  2
+   3   9  2
+   5   9  2
+   7   9  2
+
+[ angles ]
+;  i   j   k  f
+   2   1   9  2
+   4   3   9  2
+   6   5   9  2
+   8   7   9  2
+   1   9   3  2
+   1   9   5  2
+   1   9   7  2
+   3   9   5  2
+   3   9   7  2
+   5   9   7  2
+
+[ dihedrals ]
+;  i   j   k   l  f
+   2   1   9   3  1
+   2   1   9   5  1
+   2   1   9   7  1
+   4   3   9   1  1
+   4   3   9   5  1
+   4   3   9   7  1
+   6   5   9   1  1
+   6   5   9   3  1   
+   6   5   9   7  1  
+   8   7   9   1  1
+   8   7   9   3  1
+   8   7   9   5  1
+   

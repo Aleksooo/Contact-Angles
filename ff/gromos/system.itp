@@ -1,0 +1,8 @@
+#include "dcb.itp"
+
+[ system ]
+test
+
+[ molecules ]
+; molecule name         nr.
+dcb 1

@@ -1,0 +1,25 @@
+[ moleculetype ]
+; name    nrexcl
+   dce     3
+
+[ atoms ]
+; nr  type resnr residue  atom chnr charge
+   1    CL     1   DCHLE   CL1    1  -0.18
+   2   CH2     1   DCHLE    C1    2   0.18
+   3   CH2     1   DCHLE    C2    3   0.18
+   4    CL     1   DCHLE   CL2    4  -0.18
+
+[ bonds ]
+;  i   j  f
+   1   2  2
+   2   3  2
+   3   4  2
+
+[ angles ]
+;  i   j   k  f
+   1   2   3  2
+   2   3   4  2
+
+[ dihedrals ]
+;  i   j   k   l  f
+   1   2   3   4  1

@@ -1,0 +1,29 @@
+[ moleculetype ]
+; molname	nrexcl
+ MSPCE		2
+
+[ atoms ]
+;   nr   type  resnr residue  atom   cgnr     charge       mass
+     1    OWM      1    MSPCE   OW      1      -0.8216   15.99940
+     2    HWM      1    MSPCE  HW1      1       0.4108    1.00800
+     3    HWM      1    MSPCE  HW2      1       0.4108    1.00800
+
+#ifdef FLEXIBLE
+[ bonds ]
+; i	j	funct	length	force.c.
+  1	2	2	0.09839	23.200E+06
+  1	3	2	0.09839	23.200E+06
+	
+[ angles ]
+; i	j	k	funct	angle	force.c.
+2	1	3	2	109.47	434
+#else
+[ settles ]
+; OW	funct	doh	dhh
+1	1	0.09839	0.163299
+
+[ exclusions ]
+1	2	3
+2	1	3
+3	1	2
+#endif 

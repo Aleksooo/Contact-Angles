@@ -1,0 +1,14 @@
+[ moleculetype ]
+; molname	nrexcl
+  	oh	1
+
+[ atoms ]
+;   nr   type  resnr residue  atom   cgnr     charge       mass
+     1     OL      1    HOXID     OW      1      -1.0   15.99940
+     2      H      1    HOXID    HW1      1       0.0    1.00800
+
+[ constraints ]
+; OL HL	funct	doh	
+  1 2 1	0.1	
+
+

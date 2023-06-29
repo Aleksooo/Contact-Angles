@@ -1,0 +1,89 @@
+[ moleculetype ]
+; name    nrexcl
+  stearate      3
+
+[ atoms ]
+; nr  type resnr residue  atom chnr charge
+   1     C     1   STEAR    C1    1   0.99
+   2    OM     1   STEAR    O1    2  -0.89
+   3    OM     1   STEAR    O2    3  -0.89
+   4   CH2     1   STEAR    C3    4  -0.21
+   5   CH2     1   STEAR    C4    5   0.10
+   6   CH2     1   STEAR    C5    6  -0.05
+   7   CH2     1   STEAR    C6    7  -0.03
+   8   CH2     1   STEAR    C7    8   0.01
+   9   CH2     1   STEAR    C8    9  -0.01
+  10   CH2     1   STEAR    C9   10  -0.01
+  11   CH2     1   STEAR   C10   11   0.01
+  12   CH2     1   STEAR   C11   12  -0.02
+  13   CH2     1   STEAR   C12   13   0.01
+  14   CH2     1   STEAR   C13   14  -0.01
+  15   CH2     1   STEAR   C14   15  -0.01
+  16   CH2     1   STEAR   C15   16   0.04
+  17   CH2     1   STEAR   C16   17  -0.05
+  18   CH2     1   STEAR   C17   18   0.00
+  19   CH2     1   STEAR   C18   19   0.11
+  20   CH3     1   STEAR   C19   20  -0.09
+
+[ bonds ]
+;  i   j  f
+   1   2  2
+   1   3  2
+   1   4  2
+   4   5  2
+   5   6  2
+   6   7  2
+   7   8  2
+   8   9  2
+   9  10  2
+  10  11  2
+  11  12  2
+  12  13  2
+  13  14  2
+  14  15  2
+  15  16  2
+  16  17  2
+  17  18  2
+  18  19  2
+  19  20  2
+
+[ angles ]
+;  i   j   k  f
+   2   1   3  2
+   2   1   4  2
+   3   1   4  2
+   1   4   5  2
+   4   5   6  2
+   5   6   7  2
+   6   7   8  2
+   7   8   9  2
+   8   9  10  2
+   9  10  11  2
+  10  11  12  2
+  11  12  13  2
+  12  13  14  2
+  13  14  15  2
+  14  15  16  2
+  15  16  17  2
+  16  17  18  2
+  17  18  19  2
+  18  19  20  2
+
+[ dihedrals ]
+;  i   j   k   l  f  ksi     K0 
+   1   2   3   4  2  0.0 167.42; planar carboxyl group
+;   1   4   5   6  1
+   4   5   6   7  1
+   5   6   7   8  1
+   6   7   8   9  1
+   7   8   9  10  1
+   8   9  10  11  1
+   9  10  11  12  1
+  10  11  12  13  1
+  11  12  13  14  1
+  12  13  14  15  1
+  13  14  15  16  1
+  14  15  16  17  1
+  15  16  17  18  1
+  16  17  18  19  1
+  17  18  19  20  1

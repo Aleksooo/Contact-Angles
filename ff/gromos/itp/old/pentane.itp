@@ -1,0 +1,30 @@
+[ moleculetype ]
+; name    nrexcl
+  PEN      3
+
+[ atoms ]
+;  nr    type  resnr   residue    atom    chnr     charge
+    1     CH3      1    PENTA      CH31       1       0.00
+    2     CH2      1    PENTA      CH21       2       0.00
+    3     CH2      1    PENTA      CH22       3       0.00
+    4     CH2      1    PENTA      CH23       4       0.00
+    5     CH3      1    PENTA      CH32       5       0.00
+
+[ bonds ]
+;   i      j    func
+    1      2       2
+    2      3       2
+    3      4       2
+    4      5       2
+    
+[ angles ]
+;   i      j      k    func
+    1      2      3       2
+    2      3      4       2
+    3      4      5       2
+ 
+
+[ dihedrals ]
+;   i      j      k      l    func
+    1      2      3      4       1
+    2      3      4      5       1

@@ -1,0 +1,71 @@
+[ moleculetype ]
+; name    nrexcl
+PHENOL      3 
+
+[ atoms ]
+;  nr    type  resnr   residue    atom    chnr     charge 
+    1     H       1     PHEOH     H1        1        0.42
+    2     O       1     PHEOH     O1        2       -0.63
+    3     C       1     PHERI     C1        3        0.45
+    4     C       1     PHERI     C6        4       -0.27
+    5     H       1     PHERI     H6        5        0.13
+    6     C       1     PHERI     C2        6       -0.27
+    7     H       1     PHERI     H2        7        0.13
+    8     C       1     PHERI     C3        8       -0.02
+    9     H       1     PHERI     H3        9        0.08
+   10     C       1     PHERI     C4       10       -0.18
+   11     H       1     PHERI     H4       11        0.10
+   12     C       1     PHERI     C5       12       -0.02
+   13     H       1     PHERI     H5       13        0.08
+
+[ bonds ]   
+ ;  i    j   func
+    1    2    2 	
+    2    3    2 	
+    3    4    2 	
+    3    6    2 	
+    4    5    2 	
+    4   12    2 	
+    6    7    2 	
+    6    8    2 	
+    8    9    2 	
+    8   10    2 	
+   10   11    2 	
+   10   12    2 	
+   12   13    2 	
+
+[ angles ] 
+ ;  i    j    k   func
+    1    2    3   2 	
+    2    3    4   2 	
+    2    3    6   2 	
+    4    3    6   2 	
+    3    4    5   2 	
+    3    4   12   2 	
+    5    4   12   2 	
+    3    6    7   2 	
+    3    6    8   2 	
+    7    6    8   2 	
+    6    8    9   2 	
+    6    8   10   2 	
+    9    8   10   2 	
+    8   10   11   2 	
+    8   10   12   2 	
+   11   10   12   2 	
+    4   12   10   2 	
+    4   12   13   2 	
+   10   12   13   2 	
+
+[ dihedrals ]	
+ ;   i    j    k    l   func
+     3    6    8   10    2
+     6    8   10   12    2
+     8   10   12    4    2
+    12    4    3    6    2
+     4    3    6    8    2
+     2    3    6    7    2
+;     7    6    8    9    2
+     9    8   10   11    2
+;    11   10   12   13    2
+    13   12    4    5    2
+     5    4    3    2    2

@@ -1,0 +1,8 @@
+[ moleculetype ]
+; name    nrexcl
+  methane         3
+
+[ atoms ]
+;  nr    type  resnr   residue    atom    chnr     charge
+    1     CH4      1    METAN      C1       1       0.00
+

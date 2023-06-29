@@ -1,0 +1,70 @@
+[ moleculetype ]
+; name    nrexcl
+BENZENE      3 
+
+[ atoms ]
+;  nr    type  resnr   residue    atom    chnr     charge 
+    1     H     1       BENZE      H1       1       0.08
+    2     C     1       BENZE      C1       2      -0.08
+    3     C     1       BENZE      C6       3      -0.08
+    4     H     1       BENZE      H6       4       0.08
+    5     C     1       BENZE      C2       5      -0.08
+    6     H     1       BENZE      H2       6       0.08
+    7     C     1       BENZE      C3       7      -0.08
+    8     H     1       BENZE      H3       8       0.08
+    9     C     1       BENZE      C4       9      -0.08
+   10     H     1       BENZE      H4      10       0.08
+   11     C     1       BENZE      C5      11      -0.08
+   12     H     1       BENZE      H5      12       0.08  
+
+[ bonds ]  
+;   i    j   func
+    1    2    2 	
+    2    3    2 	
+    2    5    2 	
+    3    4    2 	
+    3   11    2 	
+    5    6    2 	
+    5    7    2 	
+    7    8    2 	
+    7    9    2 	
+    9   10    2 	
+    9   11    2 	
+   11   12    2 	
+
+[ angles ] 
+;   i    j    k   func
+    1    2    3    2	
+    1    2    5    2	
+    3    2    5    2	
+    2    3    4    2	
+    2    3   11    2	
+    4    3   11    2	
+    2    5    6    2	
+    2    5    7    2	
+    6    5    7    2	
+    5    7    8    2	
+    5    7    9    2	
+    8    7    9    2	
+    7    9   10    2	
+    7    9   11    2	
+   10    9   11    2	
+    3   11    9    2	
+    3   11   12    2	
+    9   11   12    2	
+
+
+[ dihedrals ] 
+;   i    j    k    l   func
+    2    3   11    9     2
+    3   11    9    7     2
+   11    9    7    5     2
+    9    7    5    2     2
+    7    5    2    3     2
+    5    2    3   11     2
+    1    2    3    4     2
+    4    3   11   12     2
+   12   11    9   10     2
+   10    9    7    8     2
+    8    7    5    6     2
+    6    5    2    1     2
