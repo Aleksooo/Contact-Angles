@@ -38,7 +38,7 @@ def build_system(
             for atom in new_mol.atoms:
                 new_atom = atom.copy()
                 new_atom.idx = len(structure.atoms) + 1
-                new_atom.mol_idx = mol_idx
+                new_atom.mol_idx = mol_idx + 1
                 structure.atoms.append(new_atom)
 
     print('\nPushing atoms apart:')

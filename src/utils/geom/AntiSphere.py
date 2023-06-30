@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 import numpy as np
-# from scipy.spatial import distance
 from .Shape import Shape
 from .Box import Box
 from .Sphere import Sphere
@@ -9,6 +8,7 @@ from .Sphere import Sphere
 @dataclass
 class AntiSphere(Shape):
     radius:  float = 1
+    borders_center: np.array = field(default_factory=np.array)
     borders:  np.array = field(default_factory=np.array)
 
     def get_volume(self) -> float:
@@ -28,7 +28,7 @@ class AntiSphere(Shape):
         return point
 
     def get_box(self):
-        return Box(center=self.center, borders=self.borders)
+        return Box(center=self.borders_center, borders=self.borders)
 
     def get_sphere(self):
         return Sphere(center=self.center, radius=self.radius)
