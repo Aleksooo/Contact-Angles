@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+#include<stdio.h>
 #include <array>
 
 #ifndef HANDLER

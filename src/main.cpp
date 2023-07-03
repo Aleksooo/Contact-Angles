@@ -28,11 +28,17 @@ int main() {
     // }
 
     std::filesystem::path path("../ff/gromos/gro/decane.gro");
-    Molecule mol = read_mol(path);
+    System sys = read_sys(path);
 
-    for (auto a : mol.get_atoms()) {
-        std::cout << a.get_XYZ() << std::endl;
-    }
+    // std::cout << sys.title << std::endl;
+    // std::cout << sys.box << std::endl;
+    // for (auto a : sys.atoms) {
+    //     std::cout << a.mol_id << ' ' << a.mol_name << ' ' << a.id << ' ' << a.name << ' ' << a.xyz << std::endl;
+    // }
+
+    std::filesystem::path outf("../test_output.gro");
+    write_sys(sys, outf);
+
 
     return 0;
 }

@@ -28,30 +28,15 @@ Molecule& Molecule::operator=(Molecule&& rhs) {
     return *this;
 }
 
+
 vec Molecule::get_center() {
-    vec sum = std::accumulate(atoms.begin(), atoms.end(), vec(), [](auto a, auto b){ return a + b.get_XYZ(); });
+    vec sum = std::accumulate(atoms.begin(), atoms.end(), vec(), [](vec a, Atom b){ return a + b.xyz; });
     return sum / atoms.size();
-}
-
-void Molecule::add_atom(const Atom& lhs) {
-    atoms.push_back(Atom(lhs));
-}
-
-std::vector<Atom> Molecule::get_atoms() {
-    return atoms;
 }
 
 void Molecule::set_atoms_to_center() {
     vec center = get_center();
-    for (auto& atom : atoms) {
-        atom.set_XYZ(atom.get_XYZ() - center);
+    for (Atom& atom : atoms) {
+        atom.xyz = (atom.xyz - center);
     }
-}
-
-void Molecule::set_id(int id_) {
-    id = id_;
-}
-
-void Molecule::set_name(std::string name_) {
-    name = name_;
 }

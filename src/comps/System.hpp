@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Atom.hpp"
+#include "Molecule.hpp"
 
 #include "../handler.hpp"
 
@@ -8,12 +9,11 @@
 #define SYSTEM
 
 class System {
-private:
+public:
     std::string title = "System";
     vec box;
     std::vector<Atom> atoms;
 
-public:
     // RAII
     System();
     System(const System& lhs);
@@ -22,6 +22,7 @@ public:
     System& operator=(System&& rhs);
 
     // Methods
+    void add_mol(const Molecule& mol_);
 };
 
 #endif

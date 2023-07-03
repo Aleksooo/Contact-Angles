@@ -14,6 +14,8 @@
 #ifndef IO
 #define IO
 
-Molecule read_mol(std::filesystem::path file);
+System read_sys(std::filesystem::path file_path);
+Molecule read_mol(std::filesystem::path file_path);
+void write_sys(const System& sys, std::filesystem::path file_path);
 
 #endif

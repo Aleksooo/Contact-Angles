@@ -32,19 +32,3 @@ Atom& Atom::operator=(Atom&& rhs) {
 
     return *this;
 }
-
-vec Atom::get_XYZ() {
-    return xyz;
-}
-
-void Atom::set_XYZ(const vec& xyz_) {
-    xyz = xyz_;
-}
-
-void Atom::set_id(int id_) {
-    id = id_;
-}
-
-void Atom::set_name(std::string name_) {
-    name = name_;
-}

@@ -27,3 +27,10 @@ System& System::operator=(System&& rhs) {
 
     return *this;
 }
+
+
+void System::add_mol(const Molecule& mol_) {
+    for (Atom a : mol_.atoms) {
+        atoms.push_back(a);
+    }
+}
