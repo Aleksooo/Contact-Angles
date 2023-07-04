@@ -1,44 +1,54 @@
 #include <iostream>
 #include <filesystem>
 #include "handler.hpp"
-#include "comps/Atom.hpp"
-#include "comps/Molecule.hpp"
+#include "struct/Atom.hpp"
+#include "struct/Molecule.hpp"
+#include "struct/System.hpp"
 #include "IO/io_gro.hpp"
+#include "shapes/Box.hpp"
+#include "shapes/Cylinder.hpp"
+#include "shapes/AntiCylinder.hpp"
+#include "alg/generator.hpp"
 #include "random"
 
 int main() {
-    // std::random_device rd;
-    // std::mt19937 g(rd());
-    // std::uniform_real_distribution<double> dist(-2.0, 2.0);
-    // auto gen = [&dist, &g](){ return dist(g); };
+    std::random_device rd;
+    std::mt19937 gen(rd());
 
-    // vec xyz;
+    System sys("Test", vec({3, 3, 3}));
 
-    // Molecule mol;
-    // Atom atom;
-    // for (size_t i = 0; i < 5; i++) {
-    //     std::generate(xyz.begin(), xyz.end(), gen);
-    //     atom.set_XYZ(xyz);
+    std::filesystem::path decane_inp("../ff/gromos/gro/decane.gro");
+    Molecule decane = read_mol(decane_inp);
+    decane.set_atoms_to_center();
 
-    //     mol.add_atom(atom);
-    // }
+    Cylinder cylinder(sys.get_center(), 1, 3, vec({1, 0, 0}));
 
-    // for (auto a : mol.get_atoms()) {
-    //     std::cout << a.get_XYZ() << std::endl;
-    // }
+    std::cout << "Inserting decane..." << std::endl;
+    for (size_t mol_id = 1; mol_id <= 26; mol_id++) {
+        // std::cout << mol_id << std::endl;
+        insert_mol_into_shape(sys, cylinder, decane, mol_id, gen);
+    }
 
-    std::filesystem::path path("../ff/gromos/gro/decane.gro");
-    System sys = read_sys(path);
 
-    // std::cout << sys.title << std::endl;
-    // std::cout << sys.box << std::endl;
-    // for (auto a : sys.atoms) {
-    //     std::cout << a.mol_id << ' ' << a.mol_name << ' ' << a.id << ' ' << a.name << ' ' << a.xyz << std::endl;
-    // }
+    std::filesystem::path water_inp("../ff/gromos/gro/water.gro");
+    Molecule water = read_mol(water_inp);
+    water.set_atoms_to_center();
 
-    std::filesystem::path outf("../test_output.gro");
-    write_sys(sys, outf);
+    // AntiCylinder anticylinder(vec({1.5, 1.5, 1.5}), 1, 3, vec({1, 0, 0}), vec({1.5, 1.5, 1.5}), sys.box);
+    AntiCylinder anticylinder(cylinder, Box(sys.get_center(), sys.box));
 
+    // std::cout << anticylinder.borders_center << std::endl;
+    // std::cout << anticylinder.borders << std::endl;
+
+    std::cout << "Inserting water..." << std::endl;
+    for (size_t mol_id = 1; mol_id <= 580; mol_id++) {
+        // std::cout << mol_id << std::endl;
+        insert_mol_into_shape(sys, anticylinder, water, mol_id, gen);
+    }
+
+    sys.apply_pbc();
+    std::filesystem::path outp("../decane_water_cylinder_test.gro");
+    write_sys(sys, outp);
 
     return 0;
 }

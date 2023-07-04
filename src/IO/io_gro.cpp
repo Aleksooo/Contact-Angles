@@ -28,10 +28,6 @@ System read_sys(std::filesystem::path file_path) {
             counter++;
         }
 
-        // for (auto i : args) {
-        //     std::cout << i << std::endl;
-        // }
-
         atom.mol_id = std::stoi(args[0]);
         atom.mol_name = args[1];
         atom.name = args[2];
@@ -62,15 +58,17 @@ Molecule read_mol(std::filesystem::path file_path) {
     Molecule mol;
 
     mol.id = sys.atoms[0].mol_id;
-    mol.name = sys.atoms[0].name;
+    mol.name = sys.atoms[0].mol_name;
 
     for (Atom& a : sys.atoms) {
         if (mol.id != a.mol_id || mol.name != a.mol_name) {
-            std::cerr << "File consist a few molecules but should consit one." << std::endl;
+            std::cerr << "The file contains several molecules, and should contain one." << std::endl;
         }
 
         mol.atoms.push_back(a);
     }
+
+    mol.calc_size();
 
     return mol;
 
@@ -84,7 +82,7 @@ void write_sys(const System& sys, std::filesystem::path file_path) {
     file << sys.atoms.size() << std::endl;
 
     for (const Atom& a : sys.atoms) {
-        file << std::setw(5) << a.mol_id << std::setw(5) << a.mol_name << std::setw(5) << a.id << std::setw(5) << a.name;
+        file << std::setw(5) << a.mol_id << std::setw(5) << a.mol_name << std::setw(5) << a.name << std::setw(5) << a.id;
         file << a.xyz << std::endl;
     }
 

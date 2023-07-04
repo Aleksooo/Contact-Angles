@@ -5,9 +5,9 @@
 #include <algorithm>
 #include <array>
 #include <vector>
-#include "../comps/Atom.hpp"
-#include "../comps/Molecule.hpp"
-#include "../comps/System.hpp"
+#include "../struct/Atom.hpp"
+#include "../struct/Molecule.hpp"
+#include "../struct/System.hpp"
 
 #include "../handler.hpp"
 
