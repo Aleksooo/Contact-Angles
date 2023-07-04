@@ -33,21 +33,20 @@ int sign(double x) {
     return std::signbit(x) ? -1 : 1;
 }
 
-// Test speed
-double dist2_pbc(vec point1, vec point2, vec box) {
+vec delta_pbc(vec point1, vec point2, vec box) {
     vec delta = point2 - point1;
     delta[0] = abs(delta[0]) * 2 > box[0] ? delta[0] - sign(delta[0]) * box[0] : delta[0];
     delta[1] = abs(delta[1]) * 2 > box[1] ? delta[1] - sign(delta[1]) * box[1] : delta[1];
     delta[2] = abs(delta[2]) * 2 > box[2] ? delta[2] - sign(delta[2]) * box[2] : delta[2];
 
-    return norm2(delta);
+    return delta;
+}
+
+// Test speed
+double dist2_pbc(vec point1, vec point2, vec box) {
+    return norm2(delta_pbc(point1, point2, box));
 }
 
 double dist_pbc(vec point1, vec point2, vec box) {
-    vec delta = point2 - point1;
-    delta[0] = delta[0] * 2 > box[0] ? delta[0] - std::signbit(delta[0]) * box[0] : delta[0];
-    delta[1] = delta[1] * 2 > box[1] ? delta[1] - std::signbit(delta[1]) * box[1] : delta[1];
-    delta[2] = delta[2] * 2 > box[2] ? delta[2] - std::signbit(delta[2]) * box[2] : delta[2];
-
-    return norm(delta);
+    return norm(delta_pbc(point1, point2, box));
 }

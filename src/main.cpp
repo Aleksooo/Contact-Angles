@@ -46,7 +46,8 @@ int main() {
         insert_mol_into_shape(sys, anticylinder, water, mol_id, gen);
     }
 
-    sys.apply_pbc();
+    push_atoms_apart(sys, gen);
+
     std::filesystem::path outp("../decane_water_cylinder_test.gro");
     write_sys(sys, outp);
 

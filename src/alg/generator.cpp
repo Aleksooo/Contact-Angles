@@ -54,6 +54,47 @@ void insert_mol_into_shape(
     sys.add_mol(mol, mol_id);
 }
 
+
+void push_atoms_apart(
+    System& sys,
+    std::mt19937& gen,
+    double min_dist2,
+    double max_dist2,
+    int iteration_lim
+) {
+    double min_dist = sqrt(min_dist2);
+    double max_dist = sqrt(max_dist2);
+    std::uniform_real_distribution<double> dist(min_dist, max_dist);
+
+    int iter = 0;
+    bool overlap = true;
+    int overlap_counter = 0;
+
+    while (overlap && (iter < iteration_lim)) {
+        iter++;
+        overlap = false;
+        overlap_counter = 0;
+
+        for (size_t i = 0; i < sys.atoms.size() - 1; i++) {
+            for (size_t j = i + 1; j < sys.atoms.size(); j++) {
+                if (sys.atoms[i].mol_id != sys.atoms[j].mol_id) {
+                    vec delta = delta_pbc(sys.atoms[i].xyz, sys.atoms[j].xyz, sys.box);
+
+                    if (norm(delta) < min_dist) {
+                        sys.atoms[i].xyz = sys.atoms[i].xyz - delta * dist(gen) / norm(delta);
+                        overlap = true;
+                        overlap_counter++;
+                    }
+                }
+            }
+        }
+    }
+
+    std::cout << overlap_counter << " overlaps detected" << std::endl;
+    sys.apply_pbc();
+}
+
+
 void random_mol_rotation(Molecule& mol, std::mt19937& gen) {
     std::uniform_real_distribution<double> dist(0, M_PI);
     double psi = 2 * dist(gen);

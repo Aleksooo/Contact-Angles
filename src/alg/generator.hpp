@@ -24,4 +24,12 @@ void insert_mol_into_shape(
     double package = 0.4
 );
 
+void push_atoms_apart(
+    System& sys,
+    std::mt19937& gen,
+    double min_dist2 = 0.0064,
+    double max_dist2 = 0.0144,
+    int iteration_lim = 10
+);
+
 void random_mol_rotation(Molecule& mol, std::mt19937& gen);

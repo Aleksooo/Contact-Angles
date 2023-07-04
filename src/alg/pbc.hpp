@@ -11,5 +11,6 @@ double dist2(vec point1, vec point2);
 double dist(vec point1, vec point2);
 
 int sign(double x);
+vec delta_pbc(vec point1, vec point2, vec box);
 double dist2_pbc(vec point1, vec point2, vec box);
-double dist2_pbc(vec point1, vec point2, vec box);
+double dist_pbc(vec point1, vec point2, vec box);
