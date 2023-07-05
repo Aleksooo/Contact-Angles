@@ -68,10 +68,10 @@ void Molecule::set_atoms_to_point(vec point) {
 
 void Molecule::calc_size() {
     size = 0;
-    vec center = get_center();
+    // vec center = get_center();
     for (Atom& a : atoms) {
-        if (norm(a.xyz - center) > size) {
-            size = norm(a.xyz - center);
+        if (norm(a.xyz) > size) {
+            size = norm(a.xyz);
         }
     }
 }

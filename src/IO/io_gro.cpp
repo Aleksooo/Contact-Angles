@@ -68,6 +68,7 @@ Molecule read_mol(std::filesystem::path file_path) {
         mol.atoms.push_back(a);
     }
 
+    mol.set_atoms_to_center();
     mol.calc_size();
 
     return mol;

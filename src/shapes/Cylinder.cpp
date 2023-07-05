@@ -48,23 +48,39 @@ bool Cylinder::check_point(vec point) const {
     return (d < radius) && (2 * l < length);
 }
 
+// vec Cylinder::generate_point(std::mt19937& gen) const {
+//     std::uniform_real_distribution<double> dist_theta(0, M_PI);
+//     std::uniform_real_distribution<double> dist_phi(0, 2 * M_PI);
+//     double theta = dist_theta(gen);
+//     double phi = dist_phi(gen);
+
+//     std::uniform_real_distribution<double> dist_r(0, radius);
+//     double r = dist_r(gen);
+//     vec sphere_vec({
+//         std::sin(theta) * std::cos(phi),
+//         std::sin(theta) * std::sin(phi),
+//         std::cos(theta)
+//     });
+//     vec r_vec = sphere_vec - axis * dot(sphere_vec, axis);
+//     r_vec = r_vec * r / norm(r_vec);
+
+//     std::uniform_real_distribution<double> dist_z(-length / 2, length / 2);
+//     double z = dist_z(gen);
+
+//     return center + axis * z + r_vec;
+// }
+
 vec Cylinder::generate_point(std::mt19937& gen) const {
-    std::uniform_real_distribution<double> dist_angle(0, M_PI);
-    double theta = dist_angle(gen);
-    double phi = 2 * dist_angle(gen);
-
-    std::uniform_real_distribution<double> dist_r(0, radius);
-    double r = dist_r(gen);
-    vec sphere_vec({
-        std::sin(theta) * std::cos(phi),
-        std::sin(theta) * std::sin(phi),
-        std::cos(theta)
-    });
-    vec r_vec = sphere_vec - axis * dot(sphere_vec, axis);
-    r_vec = r_vec * r / norm(r_vec);
-
+    std::uniform_real_distribution<double> dist_r(0, 1);
+    std::uniform_real_distribution<double> dist_phi(0, 2 * M_PI);
     std::uniform_real_distribution<double> dist_z(-length / 2, length / 2);
+
+    double r = radius * std::sqrt(dist_r(gen));
+    double phi = dist_phi(gen);
     double z = dist_z(gen);
 
-    return center + axis * z + r_vec;
+    vec pos({r * std::cos(phi), r * std::sin(phi), z});
+    pos = rotate_point(pos, 0, std::acos(axis[2]), 0);
+
+    return center + pos;
 }

@@ -1,9 +1,23 @@
 #include "generator.hpp"
 
-bool check_simple_intersections(System& sys, vec point, double min_dist2) {
-    for (const Atom& a : sys.atoms) {
-        if (dist2_pbc(a.xyz, point, sys.box) < min_dist2) {
+bool check_points_intersections(System& sys, vec point, double min_dist2) {
+    for (const vec& p : sys.points) {
+        if (dist2_pbc(p, point, sys.box) < min_dist2) {
+        // if (dist2(p, point) < min_dist2) {
             return true;
+        }
+    }
+
+    return false;
+}
+
+bool check_mol_intersections(System& sys, const Molecule& mol, vec point, double min_dist2) {
+    for (const Atom& a1 : mol.atoms) {
+        for (const Atom& a2 : sys.atoms) {
+            if (dist2_pbc(a1.xyz + point, a2.xyz, sys.box) < min_dist2) {
+            // if (dist2(a1.xyz + point, a2.xyz) < min_dist2) {
+                return true;
+            }
         }
     }
 
@@ -16,10 +30,10 @@ void insert_mol_into_shape(
     Molecule mol,
     size_t mol_id,
     std::mt19937& gen,
-    int insertion_limit,
-    int rotation_limit,
     double min_dist2,
-    double package
+    double package,
+    int insertion_limit,
+    int rotation_limit
 ) {
     bool overlap = true;
     int insertion_counter = 0;
@@ -27,28 +41,30 @@ void insert_mol_into_shape(
 
     vec new_point;
 
-    // Try to insert
+    // Try to insert point
     while (overlap && (insertion_counter < insertion_limit)) {
         insertion_counter++;
 
         new_point = shape.generate_point(gen);
-        overlap = check_simple_intersections(
+        overlap = check_points_intersections(
             sys,
             new_point,
             (2 - insertion_counter / insertion_limit) * package * mol.size
+            // 2 * package * mol.size
         );
+    }
+    sys.points.push_back(new_point);
 
-        // rotating
-        while (overlap && (rotation_counter < rotation_limit)) {
-            rotation_counter++;
-            random_mol_rotation(mol, gen);
+    overlap = true;
+    // Rotating mol around point
+    while (overlap && (rotation_counter < rotation_limit)) {
+        rotation_counter++;
 
-            overlap = check_simple_intersections(sys, new_point, min_dist2);
-        }
-        rotation_counter = 0;
+        random_mol_rotation(mol, gen);
+        overlap = check_mol_intersections(sys, mol, new_point, min_dist2);
     }
 
-    if (insertion_counter == insertion_limit) { std::cerr << "FAIL!" << std::endl; }
+    if (insertion_counter == insertion_limit) { std::cerr << "Can't pos mol #" << mol_id << std::endl; }
 
     mol.set_atoms_to_point(new_point);
     sys.add_mol(mol, mol_id);
@@ -95,26 +111,13 @@ void push_atoms_apart(
 }
 
 
-void random_mol_rotation(Molecule& mol, std::mt19937& gen) {
-    std::uniform_real_distribution<double> dist(0, M_PI);
-    double psi = 2 * dist(gen);
-    double cos_psi = std::cos(psi);
-    double sin_psi = std::sin(psi);
-
-    double theta = dist(gen);
-    double cos_theta = std::cos(theta);
-    double sin_theta = std::sin(theta);
-
-    double phi = 2 * dist(gen);
-    double cos_phi = std::cos(phi);
-    double sin_phi = std::sin(phi);
-
-    // Formula from http://eecs.qmul.ac.uk/~gslabaugh/publications/euler.pdf
+void mol_rotation(Molecule& mol, double psi, double theta, double phi) {
     for (Atom& a : mol.atoms) {
-        a.xyz = vec({
-            cos_theta * cos_phi * a.xyz[0] + (sin_psi * sin_theta * cos_phi - cos_psi * sin_phi) * a.xyz[1] + (cos_psi * sin_theta * cos_phi + sin_psi * sin_phi) * a.xyz[2],
-            cos_theta * sin_phi * a.xyz[0] + (sin_psi * sin_theta * sin_phi + cos_psi * cos_phi) * a.xyz[1] + (cos_psi * sin_theta * sin_phi - sin_psi * cos_phi) * a.xyz[2],
-            -sin_theta * a.xyz[0] + sin_psi * cos_theta * a.xyz[1] + cos_psi * cos_theta * a.xyz[2]
-        });
+        a.xyz = rotate_point(a.xyz, psi, theta, phi);
     }
+}
+
+void random_mol_rotation(Molecule& mol, std::mt19937& gen) {
+    std::uniform_real_distribution<double> dist(0, 2 * M_PI);
+    mol_rotation(mol, dist(gen), dist(gen), dist(gen));
 }

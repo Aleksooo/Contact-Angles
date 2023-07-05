@@ -13,6 +13,7 @@ public:
     std::string title = "System";
     vec box;
     std::vector<Atom> atoms;
+    std::vector<vec> points;
 
     // RAII
     System();

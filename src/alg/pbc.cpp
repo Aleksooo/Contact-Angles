@@ -50,3 +50,21 @@ double dist2_pbc(vec point1, vec point2, vec box) {
 double dist_pbc(vec point1, vec point2, vec box) {
     return norm(delta_pbc(point1, point2, box));
 }
+
+vec rotate_point(vec point, double psi, double theta, double phi) {
+    double cos_psi = std::cos(psi);
+    double sin_psi = std::sin(psi);
+
+    double cos_theta = std::cos(theta);
+    double sin_theta = std::sin(theta);
+
+    double cos_phi = std::cos(phi);
+    double sin_phi = std::sin(phi);
+
+    // Formula from http://eecs.qmul.ac.uk/~gslabaugh/publications/euler.pdf
+    return vec({
+        cos_theta * cos_phi * point[0] + (sin_psi * sin_theta * cos_phi - cos_psi * sin_phi) * point[1] + (cos_psi * sin_theta * cos_phi + sin_psi * sin_phi) * point[2],
+        cos_theta * sin_phi * point[0] + (sin_psi * sin_theta * sin_phi + cos_psi * cos_phi) * point[1] + (cos_psi * sin_theta * sin_phi - sin_psi * cos_phi) * point[2],
+        -sin_theta * point[0] + sin_psi * cos_theta * point[1] + cos_psi * cos_theta * point[2]
+    });
+}

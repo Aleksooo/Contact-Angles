@@ -4,21 +4,23 @@ System::System() {}
 
 System::System(std::string title_, vec box_) : title(title_), box(box_) {}
 
-System::System(const System& lhs) : title(lhs.title), box(lhs.box), atoms(lhs.atoms) {}
+System::System(const System& lhs) : title(lhs.title), box(lhs.box), atoms(lhs.atoms), points(lhs.points) {}
 
 System& System::operator=(const System& lhs) {
     System t(lhs);
     std::swap(title, t.title);
     std::swap(box, t.box);
     std::swap(atoms, t.atoms);
+    std::swap(points, t.points);
 
     return *this;
 }
 
-System::System(System&& rhs) : title(rhs.title), box(rhs.box), atoms(rhs.atoms) {
+System::System(System&& rhs) : title(rhs.title), box(rhs.box), atoms(rhs.atoms), points(rhs.points) {
     rhs.title = "System";
     rhs.box = vec();
     rhs.atoms.clear();
+    rhs.points.clear();
 }
 
 System& System::operator=(System&& rhs) {
@@ -26,6 +28,7 @@ System& System::operator=(System&& rhs) {
     std::swap(title, t.title);
     std::swap(box, t.box);
     std::swap(atoms, t.atoms);
+    std::swap(points, t.points);
 
     return *this;
 }
