@@ -1,0 +1,31 @@
+ [ moleculetype ]
+ ; molname	nrexcl
+    Sil        2
+    
+ [ atoms ]
+ ; id	at resnr  residu name at name cg nr charge
+ 1    Siq  1  SIQUA   Siq    1   4.00          28.09
+
+ [ moleculetype ]
+ ; molname nrexcl
+    Osi        2
+
+[ atoms ]
+ ; id at type res nr  residu name at name cg nr charge
+ 1   Oq   1    OSQUA    Oq     1        -2.00       15.9994
+ 
+  [ moleculetype ]
+ ; molname nrexcl
+    SiO2x3        2
+
+[ atoms ]
+ ; id at type res nr  residu name at name cg nr charge
+     1 Siq  1 SIOx3  Siq    1  4.00
+     2 Siq  1 SIOx3  Siq    2  4.00
+     3 Siq  1 SIOx3  Siq    3  4.00
+     4  Oq  1 SIOx3   Oq    4 -2.00
+     5  Oq  1 SIOx3   Oq    5 -2.00 
+     6  Oq  1 SIOx3   Oq    6 -2.00
+     7  Oq  1 SIOx3   Oq    7 -2.00 
+     8  Oq  1 SIOx3   Oq    8 -2.00 
+     9  Oq  1 SIOx3   Oq    9 -2.00 

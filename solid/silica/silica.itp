@@ -1,0 +1,62 @@
+
+ [ moleculetype ]
+ ; molname	nrexcl
+Sil               2
+ [ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+   1       Si        1       Sil          Si1        1          1.1          28.09
+
+
+
+ [ moleculetype ]
+ ; molname	nrexcl
+Osi               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+ 1       Os        1       Osi          Os        1        -0.55       15.9994
+ 
+
+
+ [ moleculetype ]
+ ; molname	nrexcl
+Oxi               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+ 1       Ox        1       Oxi          Ox        1        -0.55       15.9994
+
+ 
+ [ moleculetype ]
+ ; molname	nrexcl
+Sih               2
+ [ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+   1       Si        1       Sih          Si2        1          1.1          28.09
+
+ 
+[moleculetype ]
+ ; molname	nrexcl
+Ooh               2
+
+[ atoms ]
+ ; id	at type	res nr 	residu name	at name	cg nr	charge
+
+1       Oh        1       Ooh       Oh     1           -0.675       15.9994
+
+
+
+ [moleculetype]
+ ; molname   nrexcl
+Hhh               2
+
+[atoms]
+ ; id at type        res nr        residu name   at name       cg nr	charge 
+
+1       Hh        1       Hhh       Hh     1        0.4          1.008
+
+
+
+
