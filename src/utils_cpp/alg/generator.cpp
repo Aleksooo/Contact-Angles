@@ -101,7 +101,7 @@ void push_atoms_apart(
                     vec delta = delta_pbc(sys.atoms[i].xyz, sys.atoms[j].xyz, sys.box);
 
                     if (norm(delta) < min_dist) {
-                        sys.atoms[i].xyz = sys.atoms[i].xyz - delta * dist(gen) / norm(delta);
+                        sys.atoms[j].xyz = sys.atoms[i].xyz + delta * dist(gen) / norm(delta);
                         overlap = true;
                         overlap_counter++;
                     }

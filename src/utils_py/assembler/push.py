@@ -24,7 +24,7 @@ def push_atoms_apart(structure, min_dist2, max_dist2, iteration_lim=10):
                         # if distance_pbc2(atom.xyz, [other_atom.xyz], structure.box)[0] < min_dist2:
                         overlap = True
                         overlap_counter += 1
-                        atom.xyz -= delta / np.linalg.norm(delta) * \
+                        other_atom.xyz += delta / np.linalg.norm(delta) * \
                             np.random.uniform(min_dist, max_dist)
 
         print(f"{overlap_counter} overlaps detected")

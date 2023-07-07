@@ -6,7 +6,7 @@ from src.utils_py.assembler.insert import insert_point_into_shape, find_position
 from src.utils_py.assembler.push import push_atoms_apart
 
 def build_system(
-    dir_gro, structure, names=None, density=None, shapes=None,
+    dir_gro, structure, names=None, density=None, shapes=None, points = list(),
     insertion_limit = int(1e5),
     rotation_limit = 10,
     package = 0.4,
@@ -27,9 +27,8 @@ def build_system(
         print(key, '\t', item)
 
     print('\nFilling system:')
-    points = []
     for name in names:
-        mol = read_gro(f'{dir_gro}{name}.gro').center_atoms_to_zero()
+        mol = read_gro(f'{dir_gro}{name}.gro').center_atoms_to_center().center_atoms_to_zero()
         mol_size = np.max(np.linalg.norm(mol.get_XYZ(), axis=1))
 
         for mol_id in tqdm(range(numbers[name])):

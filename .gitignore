@@ -1,0 +1,6 @@
+*.gro
+na_diff/
+runs/
+ff/
+.vscode/
+.DS_Store
