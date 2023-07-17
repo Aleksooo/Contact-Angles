@@ -18,9 +18,7 @@ vec operator/(const vec& lhs, double val) {
 
 std::ostream& operator<<(std::ostream& os, const vec& obj) {
     for(auto i : obj) {
-        // printf("%8.3f", i);
         os << std::fixed << std::setw(8) << std::setprecision(3) << i;
-        // os << i << ' ';
     }
 
     return os;

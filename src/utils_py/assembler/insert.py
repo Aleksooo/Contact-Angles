@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.spatial.transform import Rotation
 import sys
-from ..geom.pbc import distance_pbc2
+from ..geom.pbc import distance_pbc, distance_pbc2
 from tqdm import tqdm
 
 def insert_point_into_shape(
@@ -23,6 +23,7 @@ def insert_point_into_shape(
 
         new_point = shape.generate_point()
         overlap = np.sum(
+            # Что насчет квадрата тут???
             distance_pbc2(new_point, points, system_size) < \
             ((2 - insertion_counter / insertion_limit) * package * mol_size)
         )

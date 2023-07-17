@@ -10,8 +10,9 @@
 int main(int argc, char const *argv[])
 {
     double min_dist2 = 0.0064;
-    double max_dist2 = 0.0144;
+    double opt_dist2 = 0.0144;
     int iteration_lim = 10;
+    bool ignore_H = false;
 
     std::string inp_file = "";
     std::string outp_file = "";
@@ -21,8 +22,9 @@ int main(int argc, char const *argv[])
         if (arg_str == "-f") inp_file = std::string(argv[++arg_index]);
         else if (arg_str == "-o") outp_file = std::string(argv[++arg_index]);
         else if (arg_str == "-mn2") min_dist2 = std::stod(argv[++arg_index]);
-        else if (arg_str == "-mx2") max_dist2 = std::stod(argv[++arg_index]);
+        else if (arg_str == "-opt2") opt_dist2 = std::stod(argv[++arg_index]);
         else if (arg_str == "-il") iteration_lim = std::stoi(argv[++arg_index]);
+        else if (arg_str == "-H") ignore_H = true;
         // else if (arg_str == "-h") {
         //     // PrintUsageInfo();
         //     exit(0);
@@ -49,7 +51,7 @@ int main(int argc, char const *argv[])
     std::filesystem::path inp(inp_file);
     System sys = read_sys(inp);
 
-    push_atoms_apart(sys, gen, min_dist2, max_dist2, iteration_lim);
+    push_atoms_apart(sys, gen, min_dist2, opt_dist2, iteration_lim);
 
     std::filesystem::path outp(outp_file);
     write_sys(sys, outp);

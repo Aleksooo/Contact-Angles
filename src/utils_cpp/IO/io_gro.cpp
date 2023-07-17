@@ -5,10 +5,10 @@ System read_sys(std::filesystem::path file_path) {
     System sys;
     Atom atom;
 
-    std::string line, subline;
+    std::string line, subline, word;
     std::vector<std::string> args;
-    std::array<int, 8> mask = {5, 5, 5, 5, 8, 8, 8, 10};
-    size_t counter = 0;
+    std::array<int, 9> mask = {5, 5, 5, 5, 8, 8, 8, 100};
+    size_t point = 0;
 
     // System title
     std::getline(file, line);
@@ -21,11 +21,11 @@ System read_sys(std::filesystem::path file_path) {
 
     for (size_t i = 0; i < size; i++) {
         std::getline(file, line);
-        for (size_t p = 0; p < line.size(); p += mask[counter]) {
-            subline = std::string(line.substr(p, mask[counter]));
+        for (size_t i = 0; i < 7; i++) {
+            subline = std::string(line.substr(point, mask[i]));
             subline.erase(std::remove_if(subline.begin(), subline.end(), isspace), subline.end());
             args.push_back(subline);
-            counter++;
+            point += mask[i];
         }
 
         atom.mol_id = std::stoi(args[0]);
@@ -36,7 +36,7 @@ System read_sys(std::filesystem::path file_path) {
 
         sys.atoms.push_back(atom);
         args.clear();
-        counter = 0;
+        point = 0;
     }
 
     // Box

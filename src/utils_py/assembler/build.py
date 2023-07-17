@@ -10,8 +10,7 @@ def build_system(
     insertion_limit = int(1e5),
     rotation_limit = 10,
     package = 0.4,
-    min_dist2 = 0.08**2,
-    max_dist2 = 0.12**2
+    min_dist2 = 0.08**2
 ):
     if names == None or density == None or shapes == None:
         sys.exit('Please, give all the parametrs')
