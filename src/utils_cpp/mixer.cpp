@@ -12,7 +12,6 @@ int main(int argc, char const *argv[])
     double min_dist2 = 0.0064;
     double opt_dist2 = 0.0144;
     int iteration_lim = 10;
-    bool ignore_H = false;
 
     std::string inp_file = "";
     std::string outp_file = "";
@@ -24,7 +23,6 @@ int main(int argc, char const *argv[])
         else if (arg_str == "-mn2") min_dist2 = std::stod(argv[++arg_index]);
         else if (arg_str == "-opt2") opt_dist2 = std::stod(argv[++arg_index]);
         else if (arg_str == "-il") iteration_lim = std::stoi(argv[++arg_index]);
-        else if (arg_str == "-H") ignore_H = true;
         // else if (arg_str == "-h") {
         //     // PrintUsageInfo();
         //     exit(0);

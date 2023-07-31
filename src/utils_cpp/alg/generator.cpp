@@ -88,37 +88,37 @@ void push_atoms_apart(
 
     Timer<s> timer;
 
-    // while (overlap && (iter < iteration_lim)) {
-    //     iter++;
-    //     overlap = false;
-    //     overlap_counter = 0;
+    while (overlap && (iter < iteration_lim)) {
+        iter++;
+        overlap = false;
+        overlap_counter = 0;
 
-    //     std::cout << "Iteration " << iter;
-    //     timer.start();
-    //     for (size_t i = 0; i < sys.atoms.size() - 1; i++) {
-    //         // if (sys.atoms[i].name[0] == 'H') {
-    //         //     continue;
-    //         // }
+        std::cout << "Iteration " << iter;
+        timer.start();
+        for (size_t i = 0; i < sys.atoms.size() - 1; i++) {
+            // if (sys.atoms[i].name[0] == 'H') {
+            //     continue;
+            // }
 
-    //         for (size_t j = i + 1; j < sys.atoms.size(); j++) {
-    //             // if ((sys.atoms[i].mol_id != sys.atoms[j].mol_id) && (sys.atoms[j].name[0] != 'H')) {
-    //             if (sys.atoms[i].mol_id != sys.atoms[j].mol_id) {
-    //                 vec delta = delta_pbc(sys.atoms[i].xyz, sys.atoms[j].xyz, sys.box);
+            for (size_t j = i + 1; j < sys.atoms.size(); j++) {
+                // if ((sys.atoms[i].mol_id != sys.atoms[j].mol_id) && (sys.atoms[j].name[0] != 'H')) {
+                if (sys.atoms[i].mol_id != sys.atoms[j].mol_id) {
+                    vec delta = delta_pbc(sys.atoms[i].xyz, sys.atoms[j].xyz, sys.box);
 
-    //                 if (norm(delta) < min_dist) {
-    //                     sys.atoms[j].xyz = sys.atoms[j].xyz + delta * dist(gen) / norm(delta);
-    //                     overlap = true;
-    //                     overlap_counter++;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     timer.stop();
-    //     std::cout << " - " << std::setprecision(3) << timer.get_time() << "s" << std::endl;
-    //     timer.reset();
+                    if (norm(delta) < min_dist) {
+                        sys.atoms[j].xyz = sys.atoms[j].xyz + delta * dist(gen) / norm(delta);
+                        overlap = true;
+                        overlap_counter++;
+                    }
+                }
+            }
+        }
+        timer.stop();
+        std::cout << " - " << std::setprecision(3) << timer.get_time() << "s" << std::endl;
+        timer.reset();
 
-    //     std::cout << overlap_counter << " overlaps detected" << std::endl;
-    // }
+        std::cout << overlap_counter << " overlaps detected" << std::endl;
+    }
 
     sys.apply_pbc();
 }

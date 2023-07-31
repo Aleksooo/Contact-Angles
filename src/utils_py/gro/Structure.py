@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 import numpy as np
-from ..geom.pbc import apply_pbc_to_points
+from ..assembler.pbc import apply_pbc_to_points
 
 @dataclass
 class Structure:

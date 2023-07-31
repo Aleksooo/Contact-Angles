@@ -1,6 +1,6 @@
 import numpy as np
 from tqdm import tqdm
-from ..geom.pbc import distance_pbc2, delta_pbc
+from .pbc import distance_pbc2, delta_pbc
 
 def push_atoms_apart(structure, min_dist2, max_dist2, iteration_lim=10):
     min_dist = np.sqrt(min_dist2)

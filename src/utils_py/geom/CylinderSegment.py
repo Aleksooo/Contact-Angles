@@ -8,7 +8,7 @@ from .Plane import Plane
 
 @dataclass
 class CylinderSegment(Shape):
-    cylinder: Cylinder = field(default_factory=np.array)
+    cylinder: Cylinder = field(default_factory=Cylinder)
 
     segm_radius: float = 0
     norm: np.array = field(default_factory=np.array) # should be perpendicular to axis
@@ -25,11 +25,11 @@ class CylinderSegment(Shape):
         d = np.dot(point - self.cylinder.center, self.norm)
         # d = np.linalg.norm(np.cross(point - self.cylinder.center, self.cylinder.axis))
 
-        return (d < self.segm_radius) and self.cylinder.check_point(point)
+        return (d > self.segm_radius) and self.cylinder.check_point(point)
 
     def generate_point(self) -> np.array:
-        inside = True
-        while inside:
+        inside = False
+        while not inside:
             point = self.cylinder.generate_point()
             inside = self.check_point(point)
 

@@ -1,7 +1,8 @@
 import numpy as np
 from scipy.spatial.transform import Rotation
 import sys
-from ..geom.pbc import distance_pbc, distance_pbc2
+from .pbc import distance_pbc, distance_pbc2
+from .grid import check_grid
 from tqdm import tqdm
 
 def insert_point_into_shape(
@@ -35,6 +36,7 @@ def insert_point_into_shape(
 
 def find_position(
     structure, new_point, mol, mol_id,
+    # grid, N, dr,
     rotation_limit = 10,
     min_dist2 = 0.08**2
 ):
@@ -56,6 +58,7 @@ def find_position(
 
         for atom in new_mol.get_XYZ():
             overlap = np.all(distance_pbc2(atom, structure.get_XYZ(), structure.box) < min_dist2)
+            # overlap = check_grid(grid, structure, atom, N, dr, min_dist2)
             if overlap:
                 break
 

@@ -18,9 +18,9 @@ class Cylinder(Shape):
 
     def check_point(self, point) -> bool:
         d = np.linalg.norm(np.cross(point - self.center, self.axis))
-        l = np.dot(self.axis, point - self.center)
+        l = np.abs(np.dot(self.axis, point - self.center))
 
-        return d < self.radius and l < self.length / 2
+        return (d < self.radius) and (l < self.length / 2)
 
     def generate_point(self) -> np.array:
         r = self.radius * np.sqrt(np.random.uniform(0, 1))
