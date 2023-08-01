@@ -3,10 +3,9 @@ from scipy.spatial.transform import Rotation
 import sys
 from .pbc import distance_pbc, distance_pbc2
 from .grid import check_grid
-from tqdm import tqdm
 
 def insert_point_into_shape(
-    shape, points, system_size, mol_size, mol_id,
+    shape, points, point_id, system_size, mol_size, mol_id,
     insertion_limit = int(1e5),
     package = 0.4
 ):
@@ -25,7 +24,7 @@ def insert_point_into_shape(
         new_point = shape.generate_point()
         overlap = np.sum(
             # Что насчет квадрата тут???
-            distance_pbc2(new_point, points, system_size) < \
+            distance_pbc2(new_point, points[0:point_id, :], system_size) < \
             ((2 - insertion_counter / insertion_limit) * package * mol_size)
         )
 
@@ -35,7 +34,7 @@ def insert_point_into_shape(
     return new_point
 
 def find_position(
-    structure, new_point, mol, mol_id,
+    structure, new_point, atom_id, mol, mol_id,
     # grid, N, dr,
     rotation_limit = 10,
     min_dist2 = 0.08**2
@@ -45,7 +44,7 @@ def find_position(
 
     if not mol_id:
         new_mol = mol.copy()
-        new_mol = new_mol.set_XYZ(rotate_random(new_mol.get_XYZ()) + new_point)
+        new_mol = new_mol.set_XYZ(rotate_random(new_mol.atoms_xyz) + new_point)
 
         return new_mol
 
@@ -54,10 +53,10 @@ def find_position(
         rotation_counter += 1
 
         new_mol = mol.copy()
-        new_mol = new_mol.set_XYZ(rotate_random(new_mol.get_XYZ()) + new_point)
+        new_mol = new_mol.set_XYZ(rotate_random(new_mol.atoms_xyz) + new_point)
 
-        for atom in new_mol.get_XYZ():
-            overlap = np.all(distance_pbc2(atom, structure.get_XYZ(), structure.box) < min_dist2)
+        for atom_xyz in new_mol.atoms_xyz:
+            overlap = np.all(distance_pbc2(atom_xyz, structure.atoms_xyz[0:atom_id, :], structure.box) < min_dist2)
             # overlap = check_grid(grid, structure, atom, N, dr, min_dist2)
             if overlap:
                 break

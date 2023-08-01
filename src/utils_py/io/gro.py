@@ -5,8 +5,13 @@ import numpy as np
 
 def read_gro(file_name):
     title, atoms, box = groio.parse_file(file_name)
-    structure = Structure(title=title[:-1], box=np.fromstring(box, sep=' '))
-    for a in atoms:
+    structure = Structure(
+        title=title[:-1],
+        box=np.fromstring(box, sep=' '),
+        atoms=np.zeros(len(atoms), dtype=Atom),
+        atoms_xyz=np.zeros((len(atoms), 3))
+    )
+    for i, a in enumerate(atoms):
         atom = Atom(
             mol_id=a['resid'],
             mol_name=a['resname'],
@@ -15,7 +20,7 @@ def read_gro(file_name):
             xyz=[a['x'], a['y'], a['z']]
         )
 
-        structure.atoms.append(atom)
+        structure.add_atom(atom, i)
 
     return structure
 

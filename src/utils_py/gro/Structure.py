@@ -6,33 +6,32 @@ from ..assembler.pbc import apply_pbc_to_points
 class Structure:
     title: str = 'SYSTEM'
     box: np.array = field(default_factory=np.array)
-    atoms: list = field(default_factory=list)
+    atoms: np.array = field(default_factory=np.array)
+    atoms_xyz: np.array = field(default_factory=np.array)
+
+    def add_atom(self, atom, atom_id):
+        self.atoms[atom_id] = atom
+        self.atoms_xyz[atom_id, :] = atom.xyz
 
     def get_center(self) -> np.array:
         return self.box/2
 
     def get_XYZ(self, mol_names=None) -> np.array:
         if mol_names is None:
-            return np.array([atom.xyz for atom in self.atoms])
+            return self.atoms_xyz
 
         return np.array([atom.xyz for atom in self.atoms if atom.mol_name in mol_names])
 
-    # ???
     def get_center_pbc(self, mol_names=None):
-        cos_theta = np.zeros(3)
-        sin_theta = np.zeros(3)
+        theta = self.atoms_xyz / self.box * 2 * np.pi
         center_pbc = np.zeros(3)
 
         for i in range(3):
-            theta = self.get_XYZ(mol_names)[:, i]/self.box[i] * 2.0 * np.pi
-            cos_theta[i] = np.sum(np.cos(theta))
-            sin_theta[i] = np.sum(np.sin(theta))
-            center_pbc[i] = (
-                np.pi + \
-                np.arctan2(
-                    -sin_theta[i] / len(self.atoms),
-                    -cos_theta[i] / len(self.atoms))) * \
-                self.box[i] / (2.0 * np.pi)
+            cos_phi_mean = np.average(np.cos(theta[:, i]))
+            sin_psi_mean = np.average(np.sin(theta[:, i]))
+
+            theta_mean = np.arctan2(-sin_psi_mean, -cos_phi_mean) + np.pi
+            center_pbc[i] = self.box[i] * theta_mean / 2 / np.pi
 
         return center_pbc
 
@@ -41,21 +40,24 @@ class Structure:
         for i, atom in enumerate(self.atoms):
             new_structure.atoms[i].xyz = new_coords[i, :]
 
+        new_structure.atoms_xyz = new_coords.copy()
+
         return new_structure
 
     def apply_pbc(self):
-        return self.set_XYZ(apply_pbc_to_points(self.get_XYZ(), self.box))
+        return self.set_XYZ(apply_pbc_to_points(self.atoms_xyz, self.box))
 
     def center_atoms_to_zero(self, mol_names=None):
-        return self.set_XYZ(self.get_XYZ() - self.get_center_pbc(mol_names))
+        return self.set_XYZ(self.atoms_xyz - self.get_center_pbc(mol_names))
 
     def center_atoms_to_center(self, mol_names=None):
-        new_coords = self.get_XYZ() - self.get_center_pbc(mol_names) + self.box/2
+        new_coords = self.atoms_xyz - self.get_center_pbc(mol_names) + self.box/2
         return self.set_XYZ(new_coords).apply_pbc()
 
     def copy(self):
         return Structure(
             title = self.title,
             box = self.box.copy(),
-            atoms = [atom.copy() for atom in self.atoms]
+            atoms = self.atoms.copy(),
+            atoms_xyz =  self.atoms_xyz.copy()
         )
