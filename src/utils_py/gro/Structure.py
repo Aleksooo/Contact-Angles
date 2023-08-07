@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 import numpy as np
 from ..assembler.pbc import apply_pbc_to_points
+from .Atom import Atom, Atom_label
 
 @dataclass
 class Structure:
@@ -9,9 +10,9 @@ class Structure:
     atoms: np.array = field(default_factory=np.array)
     atoms_xyz: np.array = field(default_factory=np.array)
 
-    def add_atom(self, atom, atom_id):
-        self.atoms[atom_id] = atom
-        self.atoms_xyz[atom_id, :] = atom.xyz
+    def add_atom(self, atom_label, xyz, atom_id):
+        self.atoms[atom_id] = atom_label.copy()
+        self.atoms_xyz[atom_id, :] = xyz
 
     def get_center(self) -> np.array:
         return self.box/2
@@ -19,8 +20,16 @@ class Structure:
     def get_XYZ(self, mol_names=None) -> np.array:
         if mol_names is None:
             return self.atoms_xyz
+        return np.array([self.atoms_xyz[a.id-1, :] for a in self.atoms if a.mol_name in mol_names])
 
-        return np.array([atom.xyz for atom in self.atoms if atom.mol_name in mol_names])
+    def make_atoms(self):
+        return [Atom(
+            a.mol_id,
+            a.mol_name,
+            a.name,
+            a.id,
+            self.atoms_xyz[a.id-1, :]
+        ) for a in self.atoms]
 
     def get_center_pbc(self, mol_names=None):
         theta = self.atoms_xyz / self.box * 2 * np.pi
@@ -37,9 +46,6 @@ class Structure:
 
     def set_XYZ(self, new_coords):
         new_structure = self.copy()
-        for i, atom in enumerate(self.atoms):
-            new_structure.atoms[i].xyz = new_coords[i, :]
-
         new_structure.atoms_xyz = new_coords.copy()
 
         return new_structure

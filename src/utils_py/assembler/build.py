@@ -45,12 +45,12 @@ def build_system(
             point_id += 1
 
             new_mol = find_position(structure, new_point, atom_id, mol, mol_id, rotation_limit, min_dist2)
-            for atom in new_mol.atoms:
-                new_atom = atom.copy()
-                new_atom.id = atom_id + 1
-                new_atom.mol_id = mol_id + 1
+            for j, atom_label in np.ndenumerate(new_mol.atoms):
+                new_atom_label = atom_label.copy()
+                new_atom_label.id = atom_id + 1
+                new_atom_label.mol_id = mol_id + 1
 
-                structure.add_atom(new_atom, atom_id)
+                structure.add_atom(new_atom_label, new_mol.atoms_xyz[j, :],  atom_id)
                 atom_id += 1
 
     return structure

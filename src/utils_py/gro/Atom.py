@@ -22,3 +22,20 @@ class Atom:
             id = self.id,
             xyz = self.xyz.copy()
         )
+
+
+@dataclass
+class Atom_label:
+    mol_id: int = 1
+    mol_name: str = 'MOL'
+    name: str = 'ATOM'
+    id: int = 1
+
+    def copy(self):
+        return Atom_label(
+            mol_id = self.mol_id,
+            mol_name = self.mol_name,
+            name = self.name,
+            id = self.id
+        )
+

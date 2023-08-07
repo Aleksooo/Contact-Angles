@@ -4,7 +4,6 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 from .Shape import Shape
 from .Cylinder import Cylinder
-from .Plane import Plane
 
 @dataclass
 class CylinderSegment(Shape):
